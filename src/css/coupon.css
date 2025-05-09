@@ -1,0 +1,67 @@
+/* coupon.css - All coupon-related styles */
+
+/* Coupon Container */
+.coupon-container {
+    display: flex;
+    gap: 8px;
+    height: 40px;
+    max-width: 300px;
+    border-radius: 999px;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.coupon-container input {
+    flex: 1;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 999px 0 0 999px;
+    outline: none;
+    font-size: 14px;
+}
+
+.coupon-container button {
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 0 999px 999px 0;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    font-size: 14px;
+}
+
+.coupon-container button:hover {
+    background-color: #0056b3;
+}
+
+/* Coupon Messages */
+.coupon-message {
+    margin-top: 8px;
+    font-size: 14px;
+    padding: 8px;
+    border-radius: 4px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.coupon-message.success {
+    color: #155724;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+}
+
+.coupon-message.error {
+    color: #721c24;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+}
+
+/* Responsive Coupon Styles */
+@media (max-width: 768px) {
+    .coupon-container {
+        max-width: 100%;
+    }
+}

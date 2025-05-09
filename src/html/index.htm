@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link href="./dist/output.css" rel="stylesheet" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <link rel="stylesheet" href="../css/filter.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div>
+      <div class="top">
+        <h1>Best Sellers</h1>
+      </div>
+      <div class="top">
+        <p>
+          Necessitatibus eius consequatur ex aliquid fuga eum quidem sint
+          consectetur velit
+        </p>
+      </div>
+    </div>
+    <!-- Products Section (appears first) -->
+    <div id="products-container" class="products-container">
+      <!-- Product items will be injected here -->
+    </div>
+    <div id="filter-buttons" class="swiper filter-swiper"></div>
+
+    <!-- Product List -->
+    <div id="product-list" class="product-list"></div>
+    <!-- Product items will be injected here -->
+    <div class="view-btn">
+      <a href="#" class="view-all-button">View All Products</a>
+    </div>
+    <div class="join-section">
+      <h1>Join Our Newsletter</h1>
+      <p>
+        Subscribe to get special offers, free giveaways, and once-in-a-lifetime
+        deals.
+      </p>
+      <div class="input-container">
+        <input
+          type="email"
+          placeholder="Your email address"
+          class="placeholder:text-lg"
+        />
+        <button>Subscribe</button>
+      </div>
+    </div>
+    <footer class="bg-gray-100 text-gray-800 py-8">
+      <div class="container mx-auto px-4">
+        <!-- Footer Top: Links Section -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-2">
+          <!-- Reduced gap here -->
+          <!-- Company Info -->
+          <div>
+            <h3 class="font-bold text-lg mb-3">Contact Us</h3>
+            <!-- Reduced margin-bottom -->
+            <ul>
+              <li>
+                <span class="text-gray-600">Phone:</span>
+                <a
+                  href="tel:+1234567890"
+                  class="text-gray-600 hover:text-gray-400"
+                  >+1 234 567 890</a
+                >
+              </li>
+              <li>
+                <span class="text-gray-600">Email:</span>
+                <a
+                  href="mailto:support@yourstore.com"
+                  class="text-gray-600 hover:text-gray-400"
+                  >support@yourstore.com</a
+                >
+              </li>
+              <li>
+                <span class="text-gray-600">Address:</span> 123 Main St, City,
+                Country
+              </li>
+            </ul>
+          </div>
+
+          <!-- Company -->
+          <div>
+            <h3 class="font-bold text-lg mb-3">Company</h3>
+            <ul>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-600 hover:text-blue-500 hover:underline hover:underline-offset-4 transition-all"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-600 hover:text-blue-500 hover:underline hover:underline-offset-4 transition-all"
+                  >Careers</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-600 hover:text-blue-500 hover:underline hover:underline-offset-4 transition-all"
+                  >Blog</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-600 hover:text-blue-500 hover:underline hover:underline-offset-4 transition-all"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Customer Service -->
+          <div>
+            <h3 class="font-bold text-lg mb-3">Customer Service</h3>
+            <ul>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-blue-500 hover:underline hover:underline-offset-4 transition-all"
+                  >Shipping</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-blue-500 hover:underline hover:underline-offset-4 transition-all"
+                  >Returns</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-blue-500 hover:underline hover:underline-offset-4 transition-all"
+                  >FAQ</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-blue-500 hover:underline hover:underline-offset-4 transition-all"
+                  >Privacy Policy</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Quick Links -->
+          <div>
+            <h3 class="font-bold text-lg mb-3">Quick Links</h3>
+            <ul>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-blue-500 hover:underline hover:underline-offset-4 transition-all"
+                  >Track Order</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-blue-500 hover:underline hover:underline-offset-4 transition-all"
+                  >Gift Cards</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-blue-500 hover:underline hover:underline-offset-4 transition-all"
+                  >Affiliate Program</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-blue-500 hover:underline hover:underline-offset-4 transition-all"
+                  >Terms & Conditions</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Social Media -->
+          <div>
+            <h3 class="font-bold text-lg mb-3">Follow Us</h3>
+            <div class="flex space-x-3">
+              <a
+                href="#"
+                class="bg-gray-200 rounded-full p-3 text-gray-600 hover:text-white hover:bg-blue-500 transition-all"
+              >
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a
+                href="#"
+                class="bg-gray-200 rounded-full p-3 text-gray-600 hover:text-white hover:bg-blue-500 transition-all"
+              >
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a
+                href="#"
+                class="bg-gray-200 rounded-full p-3 text-gray-600 hover:text-white hover:bg-blue-500 transition-all"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a
+                href="#"
+                class="bg-gray-200 rounded-full p-3 text-gray-600 hover:text-white hover:bg-blue-500 transition-all"
+              >
+                <i class="fab fa-youtube"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer Bottom: Newsletter and Copyright -->
+        <div class="mt-6 border-t border-gray-600 pt-4">
+          <!-- Reduced margin-top -->
+          <div class="flex flex-col sm:flex-row items-center justify-between">
+            <!-- Newsletter -->
+            <div class="mb-3 sm:mb-0">
+              <!-- Reduced margin-bottom -->
+              <h4 class="text-lg font-semibold">Subscribe to Our Newsletter</h4>
+              <p class="text-gray-400">Get the latest deals and updates</p>
+            </div>
+            <p class="text-center text-gray-400 text-sm mt-4">
+              © 2025 Your Store. All Rights Reserved.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="bg-gray-100 text-gray-700 py-8 text-center text-sm relative">
+        <div class="container mx-auto px-4">
+          <!-- Payment Icons -->
+          <div
+            class="flex flex-col items-center sm:flex-row sm:justify-center space-y-2 sm:space-y-0 sm:space-x-4 mb-4"
+          >
+            <span class="font-medium">We Accept:</span>
+            <div class="flex space-x-4 text-3xl text-gray-600">
+              <i class="fas fa-credit-card"></i>
+              <i class="fab fa-cc-paypal"></i>
+              <i class="fab fa-apple hover:text-black transition"></i>
+              <i class="fab fa-google hover:text-blue-500 transition"></i>
+              <i class="fas fa-store"></i>
+              <i class="fas fa-money-bill-wave"></i>
+            </div>
+          </div>
+
+          <!-- Policy Links -->
+          <div class="flex justify-center space-x-6 text-gray-500 mb-2">
+            <a href="#" class="hover:text-gray-900 transition"
+              >Terms of Service</a
+            >
+            <a href="#" class="hover:text-gray-900 transition"
+              >Privacy Policy</a
+            >
+            <a href="#" class="hover:text-gray-900 transition"
+              >Cookies Settings</a
+            >
+          </div>
+
+          <!-- Copyright -->
+          <p class="mb-1">
+            © Copyright <strong class="font-semibold">eStore</strong>. All
+            Rights Reserved.
+          </p>
+
+          <!-- Designer Credit -->
+          <p>
+            Designed by
+            <a href="#" class="text-blue-600 hover:underline">BootstrapMade</a>
+          </p>
+        </div>
+
+        <!-- Scroll to Top Button -->
+        <button
+          id="scrollToTopBtn"
+          onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+          class="opacity-0 pointer-events-none w-12 fixed bottom-6 right-6 bg-blue-700 text-white p-4 rounded-full shadow-md hover:bg-blue-800 transition-opacity duration-300"
+          aria-label="Scroll to top"
+        >
+          <i class="fas fa-arrow-up"></i>
+        </button>
+      </div>
+    </footer>
+    <script>
+      const scrollBtn = document.getElementById("scrollToTopBtn");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 100) {
+          scrollBtn.classList.remove("opacity-0", "pointer-events-none");
+        } else {
+          scrollBtn.classList.add("opacity-0", "pointer-events-none");
+        }
+      });
+    </script>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/filter.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- New Filter JS -->
+  </body>
+</html>

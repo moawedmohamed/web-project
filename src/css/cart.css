@@ -1,0 +1,164 @@
+.firstPart {
+    background-color: #ffffff;
+    border-top: 4px solid #85ade9;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 1rem;
+    transition: height 0.3s ease;
+    overflow-y: auto;
+    /* ✅ Good */
+}
+
+#cart-container {
+    max-height: none;
+    /* Allows it to grow freely */
+    overflow-y: auto;
+    /* Adds scroll if needed */
+    transition: all 0.3s ease;
+    /* padding-bottom: 80px; */
+    /* Smooth transition when size changes */
+}
+
+.secondPart .card {
+    border-top: 4px solid #85ade9;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.btns {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    /* top: 0; */
+    bottom: -10px;
+    /* أو top: 20px حسب مكانها داخل التصميم */
+    background-color: white;
+    z-index: 999;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* ظل خفيف */
+}
+
+.coupon-container {
+    height: 40px;
+    display: flex;
+    max-width: 300px;
+    border-radius: 999px;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.coupon-container input {
+    flex: 1;
+    border: none;
+    padding: 6px 10px;
+    /* Reduced vertical padding */
+    font-size: 14px;
+    border-radius: 999px 0 0 999px;
+    outline: none;
+}
+
+.coupon-container button {
+    border: none;
+    padding: 6px 16px;
+    /* Reduced vertical padding */
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 0 999px 999px 0;
+    transition: background-color 0.3s ease;
+    font-size: 14px;
+}
+
+.coupon-container button:hover {
+    background-color: #0056b3;
+}
+
+#clear-update button {
+    border-radius: 50px;
+    padding: 5px 25px;
+
+}
+
+.primary-btn {
+    background-color: #007bff;
+    /* Dark blue */
+    color: white;
+    border: none;
+    border-radius: 999px;
+    /* Fully rounded */
+    padding: 10px;
+    display: block;
+    width: 100%;
+}
+
+.primary-btn:hover {
+    background-color: #0056b3;
+    color: white;
+}
+
+.secondary-btn {
+    background-color: #e7ecee;
+    opacity: .6;
+
+    text-decoration: none;
+    border-radius: 999px;
+    padding: 10px;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.secondary-btn:hover {
+    background-color: #d0d7da;
+
+}
+
+
+.product-holder {
+    align-items: center;
+}
+
+.add-quantity {
+    min-width: 110px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.add-quantity button {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-secondary i {
+    transition: color 0.3s ease;
+}
+
+.text-secondary i:hover {
+    color: #000;
+}
+
+@media (max-width: 768px) {
+    .firstPart {
+        max-height: none;
+        height: auto;
+    }
+
+    .btns {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #clear-update {
+        width: 100%;
+        justify-content: space-between;
+    }
+}

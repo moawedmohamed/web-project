@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Page</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  <!-- Leaflet CSS -->
+  <link
+  rel="stylesheet"
+  href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+/>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f9fa;
+      }
+      .contact-section {
+        padding: 50px 0;
+      }
+      .contact-box {
+        background: #fff;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        padding: 20px;
+        text-align: center;
+        height: 100%;
+      }
+      .contact-box h5 {
+        color: #007bff;
+        margin-bottom: 15px;
+      }
+      .map-form-container {
+        display: flex;
+        gap: 20px;
+        margin-top: 30px;
+      }
+      .map-placeholder {
+        background: #e0e0e0;
+        height: 300px;
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+      }
+      .form-container {
+        width: 50%;
+      }
+      .form-control {
+        border-radius: 5px;
+        margin-bottom: 15px;
+      }
+      .btn-primary {
+        background-color: #007bff;
+        border: none;
+        border-radius: 50px;
+        padding: 10px 30px;
+      }
+      .error {
+        color: red;
+        font-size: 0.9em;
+        display: none;
+        margin-bottom: 10px;
+      }
+      .form-control.invalid {
+        border-color: red;
+      }
+      .map-placeholder {
+          background: #e0e0e0;
+          height: 300px;
+          width: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 8px;
+          overflow: hidden; /* مهم لضمان ظهور الـ iframe */
+            }
+          .map-placeholder iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+          }
+    </style>
+  </head>
+  <body>
+        <form id="contactForm" action="sendmail.php" method="POST">
+
+    <div class="container contact-section">
+      <!-- Address, Call, and Email Section -->
+      <div class="row">
+        <!-- Address -->
+        <div class="col-md-4">
+          <div class="contact-box">
+             
+            <h5> <i class="bi bi-geo-alt-fill"></i>Address</h5>
+            <p>A108 Adam Street, New York, NY 535022</p>
+          </div>
+        </div>
+        <!-- Call Us -->
+        <div class="col-md-4">
+          <div class="contact-box">
+          
+            <h5>   <i class="bi bi-telephone-fill"></i> Call Us</h5>
+            <p>+1 5589 55488 55</p>
+          </div>
+        </div>
+        <!-- Email Us -->
+        <div class="col-md-4">
+          <div class="contact-box">
+            <h5> <i class="bi bi-envelope-fill"></i>  Email Us</h5>
+            <p>info@example.com</p>
+          </div>
+        </div>
+      </div>
+      <!-- Map and Form Section -->
+      <div class="map-form-container">
+        <!-- Map Placeholder -->
+        <div id="map" class="map-placeholder"></div>
+        <!-- Contact Form -->
+        <div class="form-container">
+          <div class="contact-box">
+            <form id="contactForm" action="sendmail.php" method="POST">
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  name="name"
+                  placeholder="Your Name"
+                />
+                <div id="nameError" class="error">
+                  Name is required and must be at least 2 characters long.
+                </div>
+              </div>
+              <div class="form-group">
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  name="email"
+                  placeholder="Your Email"
+                />
+                <div id="emailError" class="error">
+                  Please enter a valid email address.
+                </div>
+              </div>
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="subject"
+                  name="subject"
+                  placeholder="Subject"
+                />
+                <div id="subjectError" class="error">Subject is required.</div>
+              </div>
+              <div class="form-group">
+                <textarea
+                  class="form-control"
+                  id="message"
+                  name="message"
+                  rows="5"
+                  placeholder="Message"
+                ></textarea>
+                <div id="messageError" class="error">
+                  Message is required and must be at least 10 characters long.
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary">
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          // Get form elements
+          const name = document.getElementById("name");
+          const email = document.getElementById("email");
+          const subject = document.getElementById("subject");
+          const message = document.getElementById("message");
+
+          // Get error elements
+          const nameError = document.getElementById("nameError");
+          const emailError = document.getElementById("emailError");
+          const subjectError = document.getElementById("subjectError");
+          const messageError = document.getElementById("messageError");
+
+          // Reset error states
+          nameError.style.display = "none";
+          emailError.style.display = "none";
+          subjectError.style.display = "none";
+          messageError.style.display = "none";
+          name.classList.remove("invalid");
+          email.classList.remove("invalid");
+          subject.classList.remove("invalid");
+          message.classList.remove("invalid");
+
+          // Validation flags
+          let isValid = true;
+
+          // Validate name
+          if (name.value.trim().length < 2) {
+            nameError.style.display = "block";
+            name.classList.add("invalid");
+            isValid = false;
+          }
+
+          // Validate email using regex
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailRegex.test(email.value.trim())) {
+            emailError.style.display = "block";
+            email.classList.add("invalid");
+            isValid = false;
+          }
+
+          // Validate subject
+          if (subject.value.trim() === "") {
+            subjectError.style.display = "block";
+            subject.classList.add("invalid");
+            isValid = false;
+          }
+
+          // Validate message
+          if (message.value.trim().length < 10) {
+            messageError.style.display = "block";
+            message.classList.add("invalid");
+            isValid = false;
+          }
+
+          // If all validations pass, submit the form
+          if (isValid) {
+            this.submit();
+          }
+        });
+
+        
+    </script>
+    
+<!-- Leaflet JS -->    
+<script
+src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+></script>
+
+      <script>
+        // Initialize map centered at a default location
+        const map = L.map('map').setView([30.8418, 29.3084], 13); // Fayoum as fallback
+
+        // Add OpenStreetMap tile layer
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          attribution: '&copy; OpenStreetMap contributors',
+        }).addTo(map);
+
+        // Try to get user's current location
+        map.locate({ setView: true, maxZoom: 16 });
+
+        // On location found
+        function onLocationFound(e) {
+          const radius = e.accuracy;
+
+          L.marker(e.latlng).addTo(map)
+            .bindPopup("You are here").openPopup();
+
+          L.circle(e.latlng, radius).addTo(map);
+        }
+
+        // On location error
+        function onLocationError(e) {
+          alert(e.message);
+        }
+
+        map.on('locationfound', onLocationFound);
+        map.on('locationerror', onLocationError);
+      </script>
+
+  </body>
+</html>
