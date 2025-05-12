@@ -1,5 +1,5 @@
 // cart.js
-
+// import "../css/cart.css"
 window.addEventListener("DOMContentLoaded", () => {
   displayCartItems();
   document.getElementById("shipping").addEventListener("change", updateSummary);

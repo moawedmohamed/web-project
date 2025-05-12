@@ -1,5 +1,5 @@
 // Define valid coupons
-
+// import "../css/coupon.css"
 function showCouponMessage(message, type) {
   let messageElement = document.getElementById("coupon-message");
 

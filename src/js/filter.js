@@ -1,3 +1,4 @@
+// import "../css/filter.css"
 let allProducts = [];
 
 async function fetchAndDisplayProducts() {
@@ -19,7 +20,6 @@ async function fetchAndDisplayProducts() {
     ).innerHTML = `<p class="product-error">Failed to load products. Refresh the page.</p>`;
   }
 }
-
 
 function getUniqueCategories(products) {
   const categorySet = new Set(products.map((p) => p.category));
@@ -65,7 +65,13 @@ function createFilterSwiper(categories) {
     });
   }, 100);
 }
-
+function filterByCategory(category) {
+  const filtered =
+    category === "all"
+      ? allProducts
+      : allProducts.filter((p) => p.category === category);
+  displayProducts(filtered);
+}
 function displayProducts(products) {
   const container = document.getElementById("product-list");
   container.classList.add("fade-out");
@@ -190,14 +196,6 @@ function updateButtonState(productId, added) {
       button.removeAttribute("disabled");
     }
   });
-}
-
-function filterByCategory(category) {
-  const filtered =
-    category === "all"
-      ? allProducts
-      : allProducts.filter((p) => p.category === category);
-  displayProducts(filtered);
 }
 
 function generateStarsSVG(rate) {

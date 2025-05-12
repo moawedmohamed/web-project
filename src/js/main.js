@@ -1,3 +1,4 @@
+// import "../css/style.css"
 async function fetchAndDisplayProducts() {
   try {
     const response = await fetch("https://fakestoreapi.com/products");
