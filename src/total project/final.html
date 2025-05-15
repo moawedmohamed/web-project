@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Store Interface</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../css/st.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+
+    <style>
+    
+
+      h1 {
+        text-align: center;
+        color: #0077b6;
+        margin-bottom: 20px;
+        text-shadow: 0 0 100px gray;
+      }
+
+      .page-layout {
+        display: flex;
+        gap: 20px;
+        max-width: 1200px;
+        margin: auto;
+      }
+
+      /* Sidebar */
+      .sidebar {
+        width: 220px;
+        background-color: #ffffff;
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        height: fit-content;
+      }
+
+      .category-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .category-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #e3f2fd;
+        border-radius: 8px;
+        padding: 8px;
+        transition: background-color 0.3s, transform 0.3s;
+        cursor: pointer;
+      }
+
+      .category-item:hover {
+        background-color: #ccc;
+        transform: translateX(5px);
+      }
+
+      .category-image {
+        width: 40px;
+        height: 40px;
+        border-radius: 8px;
+        object-fit: cover;
+      }
+
+      .category-name {
+        font-size: 15px;
+        color: #0077b6;
+        font-weight: bold;
+        margin-left: 10px;
+      }
+
+      button {
+        margin-top: 2px;
+        margin-bottom: 3px;
+        height: 25px;
+        width: 60px;
+        border: none;
+        background-color: gray;
+        color: white;
+        border-radius: 40px;
+        font-size: 5px;
+        font-weight: 10;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      button:hover {
+        box-shadow: 0 5px 5px 5px #ccc;
+      }
+
+      /* Main area */
+      .main-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .filters {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        background-color: #ffffff;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        justify-content: space-between;
+      }
+
+      .filters input[type="search"],
+      .filters select,
+      .filters input[type="range"] {
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-size: 14px;
+      }
+
+      .filters label {
+        font-size: 14px;
+        margin-right: 5px;
+      }
+
+      .products {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+      }
+
+      .product-card {
+        background-color: #ffffff;
+        width: 420px;
+        height: 400px;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: transform 0.3s;
+      }
+
+      .product-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .product-card img {
+        width: 90%;
+        height: 90%;
+      }
+
+      .product-name {
+        margin-top: 10px;
+        font-weight: bold;
+        font-size: 15px;
+        color: #0077b6;
+        text-align: center;
+      }
+
+      .product-price {
+        font-size: 14px;
+        color: #555;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .main-item {
+        background: #e3f2fd;
+        padding: 10px 15px;
+        border-radius: 8px;
+        margin-bottom: 10px;
+        cursor: pointer;
+        position: relative;
+        font-weight: bold;
+      }
+
+      .main-item:hover {
+        background: #b3e5fc;
+      }
+
+      .sub-list {
+        margin-top: 8px;
+        margin-right: 10px;
+        display: none;
+        animation: fadeIn 0.3s ease-in-out;
+      }
+
+      .sub-list li {
+        margin: 5px 0;
+      }
+
+      .sub-list a {
+        text-decoration: none;
+        color: white;
+        font-size: 14px;
+      }
+
+      /* Navbar specific fixes */
+      .nav-link {
+        display: block;
+        padding: 0.5rem 1rem;
+        color: #4b5563;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      .nav-link:hover {
+        color: #3b82f6;
+      }
+
+      #nav-menu {
+        transition: all 0.3s ease;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="bg-white w-full mt-[-24px] h-fit border-b border-gray-200 mb-20 py-2"">
+      <div class="container mx-auto flex flex-col px-4">
+        <div class="flex justify-between items-center py-2 w-full">
+          <div class="flex items-center">
+            <button
+              id="mobile-menu-btn"
+              class="lg:hidden mr-2 text-gray-600 focus:outline-none"
+            >
+              <i class="bi bi-list text-2xl"></i>
+            </button>
+            <a href="#" class="font-bold text-2xl text-gray-800">eStore</a>
+          </div>
+          <div
+            class="hidden mt-3 mb-3 lg:flex items-center mx-3 w-full max-w-96 relative"
+          >
+            <input
+              type="text"
+              placeholder="Search for products"
+              class="w-full border border-blue-300 rounded-full h-[50px] py-2 pl-5 focus:outline-none focus:ring-2 focus:ring-blue-300"
+            />
+            <button
+              class="absolute right-1 top-1/2 transform -translate-y-1/2 bg-blue-800 h-[43px] text-white px-4 py-1.5 rounded-full hover:bg-blue-500"
+            >
+              <i class="bi bi-search"></i>
+            </button>
+          </div>
+          <div class="flex items-center space-x-8">
+            <button
+              id="mobile-search-btn"
+              class="lg:hidden text-gray-600 hover:text-gray-800"
+            >
+              <i class="bi bi-search text-xl"></i>
+            </button>
+            <a href="#" class="text-gray-600 hover:text-gray-800">
+              <i class="bi bi-heart text-xl"></i>
+            </a>
+            <a
+              href="../html/cart.html"
+              class="text-gray-600 hover:text-gray-800"
+            >
+              <i class="bi bi-cart text-xl"></i>
+            </a>
+            <a
+              href="../html/login2.html"
+              class="hidden lg:block text-gray-600 hover:text-gray-800"
+            >
+              <i class="bi bi-person-circle text-xl"></i>
+            </a>
+          </div>
+        </div>
+        <div id="mobile-search" class="w-full hidden my-2">
+          <div class="flex">
+            <input
+              type="text"
+              placeholder="Search for products"
+              class="border border-gray-300 rounded-l-md py-2 px-4 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+            <button
+              class="bg-gray-200 text-gray-600 py-2 px-4 hover:bg-gray-300"
+            >
+              <i class="bi bi-search"></i>
+            </button>
+            <button
+              id="close-mobile-search"
+              class="bg-gray-200 text-gray-600 py-2 px-4 rounded-r-md hover:bg-gray-300"
+            >
+              <i class="bi bi-x-lg"></i>
+            </button>
+          </div>
+        </div>
+        <div
+          id="nav-menu"
+          class="w-full border-t border-gray-200 pt-2 hidden lg:block"
+        >
+          <ul class="flex flex-col lg:flex-row lg:space-x-4">
+            <li>
+              <a href="../html/index.html" class="nav-link">Home</a>
+            </li>
+            <li>
+              <a href="../html/about.html" class="nav-link">About</a>
+            </li>
+            <li>
+              <a href="../total project/final.html" class="nav-link"
+                >Category</a
+              >
+            </li>
+            <li>
+              <a href="../html/product-details.html" class="nav-link"
+                >Product Details</a
+              >
+            </li>
+            <li>
+              <a href="../html/cart.html" class="nav-link">Cart</a>
+            </li>
+            <li>
+              <a href="../html/checkout.html" class="nav-link">Checkout</a>
+            </li>
+       
+            <li>
+              <a href="../html/contact.html" class="nav-link">Contact</a>
+            </li>
+          </ul>
+          <button
+            id="close-menu-btn"
+            class="lg:hidden mt-2 ml-auto bg-gray-200 text-gray-600 py-2 px-4 rounded-md hover:bg-gray-300"
+          >
+            <i class="bi bi-x-lg"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <h1>Sections</h1>
+    <div class="page-layout mb-20" >
+
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <ul class="category-list">
+          <li class="category-item">
+            <span
+              class="category-name main-item"
+              onclick="toggleSubList('clothingList')"
+              >Clothing</span
+            >
+            <img class="category-image" src="b.jpg" alt="" />
+            <ul class="sub-list sidebar" id="clothingList">
+              <li>
+                <button>
+                  <a href="../total project\wmen\mm.html">Women</a>
+                </button>
+              </li>
+              <li>
+                <button><a href="../total project\men\man.html">Men</a></button>
+              </li>
+              <li>
+                <button>
+                  <a href="../total project\cheld\KIDS.html">Kids</a>
+                </button>
+              </li>
+            </ul>
+          </li>
+          <li class="category-item">
+            <span
+              class="category-name main-item"
+              onclick="toggleSubList('shoes')"
+              >shoes</span
+            >
+            <img class="category-image" src="7.7.jpg" alt="" />
+            <ul class="sub-list sidebar" id="shoes">
+              <li>
+                <button>
+                  <a href="../total project\sho\shose.html">shoes</a>
+                </button>
+              </li>
+              <li>
+                <button><a>Women</a></button>
+              </li>
+              <li>
+                <button><a>Kids</a></button>
+              </li>
+            </ul>
+          </li>
+          <li class="category-item">
+            <span
+              class="category-name main-item"
+              onclick="toggleSubList('Elec')"
+              >Electronics</span
+            >
+            <img class="category-image" src="pho.jpg" alt="" />
+            <ul class="sub-list sidebar" id="Elec">
+              <li>
+                <button>
+                  <a href="../total project\elec\ELEC.html">phones</a>
+                </button>
+              </li>
+              <li>
+                <button><a>laptops</a></button>
+              </li>
+              <li>
+                <button><a>Electron</a></button>
+              </li>
+            </ul>
+          </li>
+          <li class="category-item">
+            <span
+              class="category-name main-item"
+              onclick="toggleSubList('Cosmetics')"
+              >Cosmetics</span
+            >
+            <img class="category-image" src="17.17.jpg" alt="" />
+            <ul class="sub-list sidebar" id="Cosmetics">
+              <li>
+                <button>
+                  <a href="../total project\mekup\mekup.html">Makeup</a>
+                </button>
+              </li>
+              <li>
+                <button><a>Watches</a></button>
+              </li>
+              <li>
+                <button><a>Perfume</a></button>
+              </li>
+            </ul>
+          </li>
+          <li class="category-item">
+            <span
+              class="category-name main-item"
+              onclick="toggleSubList('Household tools')"
+              >Household tools</span
+            >
+            <img class="category-image" src="hh.jpg" alt="" />
+            <ul class="sub-list sidebar" id="Household tools">
+              <li>
+                <button><a>glass</a></button>
+              </li>
+              <li>
+                <button><a>dishes</a></button>
+              </li>
+              <li>
+                <button><a>Plastics</a></button>
+              </li>
+            </ul>
+          </li>
+          <li class="category-item">
+            <span
+              class="category-name main-item"
+              onclick="toggleSubList('Sports equipment')"
+              >Sports</span
+            >
+            <img class="category-image" src="sp.jpg" alt="" />
+            <ul class="sub-list sidebar" id="Sports equipment">
+              <li>
+                <button><a>Sets</a></button>
+              </li>
+              <li>
+                <button><a>tools</a></button>
+              </li>
+              <li>
+                <button><a>games</a></button>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </aside>
+
+      <!-- Main content -->
+      <div class="main-content">
+        <!-- Filters -->
+        <div class="filters">
+          <div>
+            <label for="search">Search:</label>
+            <input type="search" id="search" placeholder="Search products..." />
+          </div>
+          <div>
+            <label for="priceRange">Price:</label>
+            <input type="range" id="priceRange" min="0" max="1000" />
+          </div>
+          <div>
+            <label for="sort">Sort by:</label>
+            <select id="sort">
+              <option>Default</option>
+              <option>Lowest Price</option>
+              <option>Highest Price</option>
+              <option>Most Popular</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Products -->
+        <div class="products">
+          <div class="product-card">
+            <img src="im.jpg" alt="Product" />
+            <div class="product-name">Women's clothing</div>
+            <div class="product-price">$375</div>
+          </div>
+          <div class="product-card">
+            <img src="ph.jpg" alt="Product" />
+            <div class="product-name">electronics</div>
+            <div class="product-price">$10000</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <div class="join-section ">
+      <h1>Join Our Newsletter</h1>
+      <p>
+        Subscribe to get special offers, free giveaways, and once-in-a-lifetime
+        deals.
+      </p>
+      <div class="input-container w-full">
+        <input
+          type="email"
+          placeholder="Your email address"
+          class="placeholder:text-lg"
+        />
+        <button class="w-28">Subscribe</button>
+      </div>
+    </div>
+    <footer class="bg-gray-100 text-gray-800 py-8">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-2">
+          <div>
+            <h3 class="font-bold text-lg mb-3">Contact Us</h3>
+            <ul>
+              <li>
+                <span class="text-gray-600">Phone:</span>
+                <a
+                  href="tel:+1234567890"
+                  class="text-gray-600 hover:text-gray-400"
+                  >+1 234 567 890</a
+                >
+              </li>
+              <li>
+                <span class="text-gray-600">Email:</span>
+                <a
+                  href="mailto:support@yourstore.com"
+                  class="text-gray-600 hover:text-gray-400"
+                  >support@yourstore.com</a
+                >
+              </li>
+              <li>
+                <span class="text-gray-600">Address:</span> 123 Main St, City,
+                Country
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-bold text-lg mb-3">Company</h3>
+            <ul>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-600 hover:text-blue-500 hover:underline hover:underline-offset-4 transition-all"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-600 hover:text-blue-500 hover:underline hover:underline-offset-4 transition-all"
+                  >Careers</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-600 hover:text-blue-500 hover:underline hover:underline-offset-4 transition-all"
+                  >Blog</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-600 hover:text-blue-500 hover:underline hover:underline-offset-4 transition-all"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-bold text-lg mb-3">Customer Service</h3>
+            <ul>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-blue-500 hover:underline hover:underline-offset-4 transition-all"
+                  >Shipping</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-blue-500 hover:underline hover:underline-offset-4 transition-all"
+                  >Returns</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-blue-500 hover:underline hover:underline-offset-4 transition-all"
+                  >FAQ</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-blue-500 hover:underline hover:underline-offset-4 transition-all"
+                  >Privacy Policy</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-bold text-lg mb-3">Quick Links</h3>
+            <ul>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-blue-500 hover:underline hover:underline-offset-4 transition-all"
+                  >Track Order</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-blue-500 hover:underline hover:underline-offset-4 transition-all"
+                  >Gift Cards</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-blue-500 hover:underline hover:underline-offset-4 transition-all"
+                  >Affiliate Program</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-blue-500 hover:underline hover:underline-offset-4 transition-all"
+                  >Terms & Conditions</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-bold text-lg mb-3">Follow Us</h3>
+            <div class="flex space-x-3">
+              <a
+                href="#"
+                class="bg-gray-200 rounded-full p-3 text-gray-600 hover:text-white hover:bg-blue-500 transition-all"
+              >
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a
+                href="#"
+                class="bg-gray-200 rounded-full p-3 text-gray-600 hover:text-white hover:bg-blue-500 transition-all"
+              >
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a
+                href="#"
+                class="bg-gray-200 rounded-full p-3 text-gray-600 hover:text-white hover:bg-blue-500 transition-all"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a
+                href="#"
+                class="bg-gray-200 rounded-full p-3 text-gray-600 hover:text-white hover:bg-blue-500 transition-all"
+              >
+                <i class="fab fa-youtube"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="mt-6 border-t border-gray-600 pt-4">
+          <div class="flex flex-col sm:flex-row items-center justify-between">
+            <div class="mb-3 sm:mb-0">
+              <h4 class="text-lg font-semibold">Subscribe to Our Newsletter</h4>
+              <p class="text-gray-400">Get the latest deals and updates</p>
+            </div>
+            <p class="text-center text-gray-400 text-sm mt-4">
+              © 2025 Your Store. All Rights Reserved.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="bg-gray-100 text-gray-700 py-8 text-center text-sm relative">
+        <div class="container mx-auto px-4">
+          <div
+            class="flex flex-col items-center sm:flex-row sm:justify-center space-y-2 sm:space-y-0 sm:space-x-4 mb-4"
+          >
+            <span class="font-medium">We Accept:</span>
+            <div class="flex space-x-4 text-3xl text-gray-600">
+              <i class="fas fa-credit-card"></i>
+              <i class="fab fa-cc-paypal"></i>
+              <i class="fab fa-apple hover:text-black transition"></i>
+              <i class="fab fa-google hover:text-blue-500 transition"></i>
+              <i class="fas fa-store"></i>
+              <i class="fas fa-money-bill-wave"></i>
+            </div>
+          </div>
+          <div class="flex justify-center space-x-6 text-gray-500 mb-2">
+            <a href="#" class="hover:text-gray-900 transition"
+              >Terms of Service</a
+            >
+            <a href="#" class="hover:text-gray-900 transition"
+              >Privacy Policy</a
+            >
+            <a href="#" class="hover:text-gray-900 transition"
+              >Cookies Settings</a
+            >
+          </div>
+          <p class="mb-1">
+            © Copyright <strong class="font-semibold">eStore</strong>. All
+            Rights Reserved.
+          </p>
+          <p>
+            Designed by
+            <a href="#" class="text-blue-600 hover:underline">BootstrapMade</a>
+          </p>
+        </div>
+        <button
+          id="scrollToTopBtn"
+          onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+          class="z-[9999] opacity-0 pointer-events-none w-14 h-14 fixed bottom-6 right-6 bg-blue-700 text-white rounded-full shadow-md hover:bg-blue-800 transition-opacity duration-300 flex items-center justify-center"
+          aria-label="Scroll to top"
+        >
+          <i class="fas fa-arrow-up text-xl"></i>
+        </button>
+      </div>
+    </footer>
+
+    <script>
+      function toggleSubList(id) {
+        const subList = document.getElementById(id);
+        const isVisible = subList.style.display === "block";
+
+        // Hide all other sub-lists
+        document
+          .querySelectorAll(".sub-list")
+          .forEach((list) => (list.style.display = "none"));
+
+        // Toggle the clicked one
+        subList.style.display = isVisible ? "none" : "block";
+      }
+
+      // Mobile menu functionality
+      document.addEventListener("DOMContentLoaded", function () {
+        const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+        const navMenu = document.getElementById("nav-menu");
+        const closeMenuBtn = document.getElementById("close-menu-btn");
+        const mobileSearchBtn = document.getElementById("mobile-search-btn");
+        const mobileSearch = document.getElementById("mobile-search");
+        const closeMobileSearch = document.getElementById(
+          "close-mobile-search"
+        );
+
+        // Toggle mobile menu
+        mobileMenuBtn.addEventListener("click", function () {
+          navMenu.classList.toggle("hidden");
+        });
+
+        // Close mobile menu
+        closeMenuBtn.addEventListener("click", function () {
+          navMenu.classList.add("hidden");
+        });
+
+        // Toggle mobile search
+        mobileSearchBtn.addEventListener("click", function () {
+          mobileSearch.classList.toggle("hidden");
+        });
+
+        // Close mobile search
+        closeMobileSearch.addEventListener("click", function () {
+          mobileSearch.classList.add("hidden");
+        });
+
+        // Scroll to top button visibility
+        window.addEventListener("scroll", function () {
+          const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+          if (window.pageYOffset > 300) {
+            scrollToTopBtn.classList.remove("opacity-0", "pointer-events-none");
+            scrollToTopBtn.classList.add("opacity-100", "pointer-events-auto");
+          } else {
+            scrollToTopBtn.classList.add("opacity-0", "pointer-events-none");
+            scrollToTopBtn.classList.remove(
+              "opacity-100",
+              "pointer-events-auto"
+            );
+          }
+        });
+      });
+    </script>
+
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+  </body>
+</html>

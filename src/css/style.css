@@ -5,6 +5,12 @@ body {
     background-color: #f4f4f4;
 }
 
+  .nav-link.active {
+    color: #3b82f6 !important; /* اللون الأزرق الفاتح */
+    background-color: #e0f2fe; /* خلفية فاتحة */
+    border-radius: 0.25rem;
+  }
+
 /* this  is the style of first section  */
 .top {
 

@@ -86,44 +86,10 @@ function displayProducts(products) {
 
       products.forEach((product) => {
         const isInCart = cart.some((item) => item.id === product.id);
-        const card = document.createElement("div");
-        card.className = "card-product";
-        card.innerHTML = `
-          <img class="product-img" src="${product.image}" alt="${
-          product.title
-        }">
-          <h3 class="product-title">${product.title
-            .split(" ")
-            .slice(0, 4)
-            .join(" ")}</h3>
-          <div class="product-info">
-            <p class="product-price">$${product.price.toFixed(2)}</p>
-            <div class="product-rating">
-              ${generateStarsSVG(product.rating.rate)} (${product.rating.count})
-            </div>
-            <button class="btn-cart" ${
-              product.rating.count === 0 ? "disabled" : ""
-            } 
-                    data-id="${product.id}" ${isInCart ? "disabled" : ""}>
-              <span class="btn-cart-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon-bag">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"/>
-                </svg>
-              </span>
-              ${
-                product.rating.count === 0
-                  ? "Unavailable"
-                  : isInCart
-                  ? "Added to Cart"
-                  : "Add to Cart"
-              }
-            </button>
-          </div>
-        `;
+        const productCard = createProductCard(product, isInCart);
+        container.appendChild(productCard);
 
-        container.appendChild(card);
-
-        const cartBtn = card.querySelector(".btn-cart");
+        const cartBtn = productCard.querySelector(".btn-cart");
         if (product.rating.count > 0) {
           cartBtn.addEventListener("click", () => {
             if (!isInCart) {
@@ -138,6 +104,42 @@ function displayProducts(products) {
   }, 300);
 }
 
+function createProductCard(product, isInCart) {
+  const card = document.createElement("div");
+  card.className = "card-product";
+
+  card.innerHTML = `
+<a href="product-details.html?id=${product.id}" style="display: inline-block;">
+  <img class="product-img" src="${product.image}" alt="${product.title}" />
+</a>    <h3 class="product-title">${product.title
+    .split(" ")
+    .slice(0, 4)
+    .join(" ")}</h3>
+    <div class="product-info">
+      <p class="product-price">$${product.price.toFixed(2)}</p>
+      <div class="product-rating">
+        ${generateStarsSVG(product.rating.rate)} (${product.rating.count})
+      </div>
+      <button class="btn-cart" ${product.rating.count === 0 ? "disabled" : ""} 
+              data-id="${product.id}" ${isInCart ? "disabled" : ""}>
+        <span class="btn-cart-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon-bag">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"/>
+          </svg>
+        </span>
+        ${
+          product.rating.count === 0
+            ? "Unavailable"
+            : isInCart
+            ? "Added to Cart"
+            : "Add to Cart"
+        }
+      </button>
+    </div>
+  `;
+
+  return card;
+}
 function updateCartCount() {
   const cart = JSON.parse(localStorage.getItem("cart")) || [];
   const totalItems = cart.reduce((total, item) => total + item.quantity, 0);

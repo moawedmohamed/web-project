@@ -38,8 +38,10 @@ async function fetchAndDisplayProducts() {
         ${
           badgeText ? `<div class="badge ${badgeClass}">${badgeText}</div>` : ""
         }
-        <img src="${product.image}" alt="${product.title}" loading="lazy">
-        <h3>${product.title.split(" ").slice(0, 4).join(" ")}</h3>
+              <a href="product-details.html?id=${product.id}">
+              <img style="width: 400px;" src="${product.image}" alt="${product.title}" loading="lazy">
+              </a>
+     <h3>${product.title.split(" ").slice(0, 4).join(" ")}</h3>
         <p class="price">$${product.price.toFixed(2)}</p>
         <div class="rating">${generateStarsSVG(product.rating.rate)} (${
         product.rating.count

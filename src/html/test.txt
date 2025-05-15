@@ -1,0 +1,273 @@
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css"
+    />
+  <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+     <script src="https://cdn.tailwindcss.com"></script>
+
+ <footer class="bg-gray-100 text-gray-800 py-8">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-2">
+          <div>
+            <h3 class="font-bold text-lg mb-3">Contact Us</h3>
+            <ul>
+              <li>
+                <span class="text-gray-600">Phone:</span>
+                <a
+                  href="tel:+1234567890"
+                  class="text-gray-600 hover:text-gray-400"
+                  >+1 234 567 890</a
+                >
+              </li>
+              <li>
+                <span class="text-gray-600">Email:</span>
+                <a
+                  href="mailto:support@yourstore.com"
+                  class="text-gray-600 hover:text-gray-400"
+                  >support@yourstore.com</a
+                >
+              </li>
+              <li>
+                <span class="text-gray-600">Address:</span> 123 Main St, City,
+                Country
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-bold text-lg mb-3">Company</h3>
+            <ul>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-600 hover:text-blue-500 hover:underline hover:underline-offset-4 transition-all"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-600 hover:text-blue-500 hover:underline hover:underline-offset-4 transition-all"
+                  >Careers</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-600 hover:text-blue-500 hover:underline hover:underline-offset-4 transition-all"
+                  >Blog</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-600 hover:text-blue-500 hover:underline hover:underline-offset-4 transition-all"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-bold text-lg mb-3">Customer Service</h3>
+            <ul>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-blue-500 hover:underline hover:underline-offset-4 transition-all"
+                  >Shipping</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-blue-500 hover:underline hover:underline-offset-4 transition-all"
+                  >Returns</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-blue-500 hover:underline hover:underline-offset-4 transition-all"
+                  >FAQ</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-blue-500 hover:underline hover:underline-offset-4 transition-all"
+                  >Privacy Policy</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-bold text-lg mb-3">Quick Links</h3>
+            <ul>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-blue-500 hover:underline hover:underline-offset-4 transition-all"
+                  >Track Order</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-blue-500 hover:underline hover:underline-offset-4 transition-all"
+                  >Gift Cards</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-blue-500 hover:underline hover:underline-offset-4 transition-all"
+                  >Affiliate Program</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-blue-500 hover:underline hover:underline-offset-4 transition-all"
+                  >Terms & Conditions</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-bold text-lg mb-3">Follow Us</h3>
+            <div class="flex space-x-3">
+              <a
+                href="#"
+                class="bg-gray-200 rounded-full p-3 text-gray-600 hover:text-white hover:bg-blue-500 transition-all"
+              >
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a
+                href="#"
+                class="bg-gray-200 rounded-full p-3 text-gray-600 hover:text-white hover:bg-blue-500 transition-all"
+              >
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a
+                href="#"
+                class="bg-gray-200 rounded-full p-3 text-gray-600 hover:text-white hover:bg-blue-500 transition-all"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a
+                href="#"
+                class="bg-gray-200 rounded-full p-3 text-gray-600 hover:text-white hover:bg-blue-500 transition-all"
+              >
+                <i class="fab fa-youtube"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="mt-6 border-t border-gray-600 pt-4">
+          <div class="flex flex-col sm:flex-row items-center justify-between">
+            <div class="mb-3 sm:mb-0">
+              <h4 class="text-lg font-semibold">Subscribe to Our Newsletter</h4>
+              <p class="text-gray-400">Get the latest deals and updates</p>
+            </div>
+            <p class="text-center text-gray-400 text-sm mt-4">
+              © 2025 Your Store. All Rights Reserved.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="bg-gray-100 text-gray-700 py-8 text-center text-sm relative">
+      <div class="container mx-auto px-4">
+          <div
+            class="flex flex-col items-center sm:flex-row sm:justify-center space-y-2 sm:space-y-0 sm:space-x-4 mb-4"
+          >
+            <span class="font-medium">We Accept:</span>
+            <div class="flex space-x-4 text-3xl text-gray-600">
+              <i class="fas fa-credit-card"></i>
+              <i class="fab fa-cc-paypal"></i>
+              <i class="fab fa-apple hover:text-black transition"></i>
+              <i class="fab fa-google hover:text-blue-500 transition"></i>
+              <i class="fas fa-store"></i>
+              <i class="fas fa-money-bill-wave"></i>
+            </div>
+          </div>
+          <div class="flex justify-center space-x-6 text-gray-500 mb-2">
+            <a href="#" class="hover:text-gray-900 transition"
+              >Terms of Service</a
+            >
+            <a href="#" class="hover:text-gray-900 transition"
+              >Privacy Policy</a
+            >
+            <a href="#" class="hover:text-gray-900 transition"
+              >Cookies Settings</a
+            >
+          </div>
+          <p class="mb-1">
+            © Copyright <strong class="font-semibold">eStore</strong>. All
+            Rights Reserved.
+          </p>
+          <p>
+            Designed by
+            <a href="#" class="text-blue-600 hover:underline">BootstrapMade</a>
+          </p>
+        </div>
+        <button
+          id="scrollToTopBtn"
+          onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+          class="opacity-0 pointer-events-none w-12 fixed bottom-6 right-6 bg-blue-700 text-white p-4 rounded-full shadow-md hover:bg-blue-800 transition-opacity duration-300"
+          aria-label="Scroll to top"
+        >
+          <i class="fas fa-arrow-up"></i>
+        </button>
+      </div>
+    </footer>
+
+
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+    <!-- Temporarily disable other scripts to isolate carousel -->
+    <script src="../js/details.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/filter.js"></script>
+    <script src="../js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <!-- Load carousel.js last -->
+    <script src="../js/carousel.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+        const navMenu = document.getElementById("nav-menu");
+        const closeMenuBtn = document.getElementById("close-menu-btn");
+        const mobileSearchBtn = document.getElementById("mobile-search-btn");
+        const mobileSearch = document.getElementById("mobile-search");
+        const closeMobileSearch = document.getElementById(
+          "close-mobile-search"
+        );
+        mobileMenuBtn.addEventListener("click", function () {
+          navMenu.classList.toggle("hidden");
+        });
+        closeMenuBtn.addEventListener("click", function () {
+          navMenu.classList.add("hidden");
+        });
+        mobileSearchBtn.addEventListener("click", function () {
+          mobileSearch.classList.toggle("hidden");
+        });
+        closeMobileSearch.addEventListener("click", function () {
+          mobileSearch.classList.add("hidden");
+        });
+      });
+    </script>

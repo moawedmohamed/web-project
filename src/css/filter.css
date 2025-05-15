@@ -3,6 +3,7 @@
     padding: 20px 0;
     background: #f9f9f9;
     text-align: center;
+    font-size: 18px;
 }
 
 /* Swiper Wrapper */
@@ -26,7 +27,22 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
+    /* Adds spacing between items */
+    padding: 1rem;
 }
+
+/* Optional: Adjust for very small screens */
+@media (max-width: 650px) {
+    .swiper-wrapper {
+        justify-content: center;
+        align-items: center;
+        /* Align to left for better flow */
+        padding: 0.5rem;
+        gap: 0.25rem;
+    }
+}
+
 
 /* Filter Button */
 .filter-btn {

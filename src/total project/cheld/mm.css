@@ -1,0 +1,236 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family:sans-serif;
+    font-family: 'comfortaa' , sans-serif;
+    -webkit-user-select: none;
+    user-select: none;
+    scroll-behavior: smooth;
+  }
+    body{
+ background-color:white;
+    }
+    .homepage{
+    background: url(k5.jpg);
+    background-size: 600px;
+    background-repeat: no-repeat;
+    background-position-x: 900px;
+    background-position-y: -1px;
+    height: 800px;
+    display: flex;
+    align-items: center;
+
+}
+.content{
+    margin-left: 100px;
+}
+.content h2{
+font-size: 40px;
+}
+.content h1{
+    color: gray;
+    font-size: 100px;
+    margin: 30px 0;
+    text-shadow: 0 0 100px gray;
+
+}
+.content button{
+    margin-top: 70px;
+    margin-bottom: 50px;
+    height: 70px;
+    width: 190px;
+    border: none;
+    background-color: gray;
+    color: aliceblue;
+    border-radius: 40px;
+    font-size: 20px;
+    font-weight: 1000;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.content button:hover{
+    box-shadow: 0 10px 50px 5px gray ;
+}
+
+.categores{
+    display: flex;
+    width: 80%;
+    margin-left: 10%;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.categores .item{
+
+    width: 19%;
+    background-color:#FAFAFA;
+    cursor: pointer;
+    
+    
+}
+.categores .item:hover{
+    background-color:#ccc;
+
+
+    transform: scale(1.05); /* بيكبر*/
+    transition: transform 0.3s ease; /* حركة ناعمة */
+    filter: brightness(1.01); 
+    border-radius: 16%; 
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);  
+    animation: wiggle 0.4s ease;
+    animation: pulse 0.6s ease-in-out;
+    
+    
+}
+.section2 img{
+    width: 170px;
+    margin-left: 10%;
+    margin-top: 20px;
+    transition: 
+    transform 0.4s ease,
+    filter 0.4s ease,
+    box-shadow 0.4s ease;
+  object-fit: cover;                 
+}
+.section2 h3{
+    text-align: center;
+    margin-top: 15px;
+}
+.section2 h4{
+  color:rgba(158, 114, 114, 0.6);
+    text-align:left;
+   
+}
+
+
+.hover-image {
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+  
+  .hover-image:hover {
+   
+    filter: brightness(1.01); 
+    border-radius: 20%; 
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);  /* ظل ناعم */
+    animation: wiggle 0.4s ease;
+    animation: pulse 0.6s ease-in-out;
+   
+    /* الانميشن*/
+  }
+  @keyframes wiggle {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(1deg); }
+    75% { transform: rotate(-1deg); }
+  }
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+ 
+  
+  .arrow-btn {
+    position: absolute;
+    top: 35%;
+    transform: translateY(-50%);
+    background: rgba(245, 245, 245, 0.4);
+    color: white;
+    border: none;
+    font-size: 28px;
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 2;
+    
+  }
+  
+  /* إخفاء الأيقونات مبدئيًا */
+  .icons {
+    
+    display: flex;
+    gap: 10px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    padding: 10px 0;
+    justify-content: center;
+  }
+  
+  /* لما الماوس ييجي على المنتج، تظهر الأيقونات */
+  .item:hover .icons {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .icons i {
+    color: white;
+   background-color:rgba(145, 130, 130, 0.6);
+    padding: 8px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  
+  .icons i:hover {
+    transform: scale(1.2);
+  }
+  /* النجوم */
+.rating-stars {
+  display: inline-block;
+  direction: ltr;
+}
+
+.star {
+  font-size: 1.4rem;
+  color: rgb(235, 220, 141);
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.star.hovered,
+.star.selected {
+  color: gold; 
+}
+
+  
+  /*price*/
+  .price-container {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      color: #333;
+    }
+
+    .old-price {
+      text-decoration: line-through;
+      color: #999;
+      margin-left: 10px;
+    }
+
+    .new-price {
+      color: #eb892e; /* أحمر لجذب الانتباه */
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+
+   .back-button {
+  display: inline-block;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  text-decoration: none;
+  color:white;
+  font-weight: bold;
+  font-size: 14px;
+  background: gray;
+  padding: 8px 12px;
+  border-radius: 15px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.back-button:hover {
+  background:#ccc;
+  transform: translateX(-3px);
+  box-shadow: 0 10px 50px 5px gray ;
+}
+
+   

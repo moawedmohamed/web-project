@@ -1,0 +1,595 @@
+<html>
+<head>
+  
+  <link rel="stylesheet" href="mm.css">
+  <script src="cat.js"></script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+ 
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link  href="https://fonts.googleapis.com/css2?family=comfortaa:wght@300&display=">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/"> 
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+ <style>
+ .image-container {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .image-container img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; 
+    transition: transform 0.3s ease;
+  }
+
+  .image-container img:hover {
+    transform: scale(1.05);
+  }
+
+  .item {
+    width: 19%;
+    height: auto;
+    background-color: #FAFAFA;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10px;
+  }
+ </style>
+</head>
+
+<body>
+  <div class="homepage">
+<div class="content">
+  <h1>Ladies</h1>
+  <h2>SAVE ALL PRODUCTS</h2>
+  <h1>10% OFF</h1>
+  <h3>WHEN YOU PURCHASE 2 OR MOST ITEMS*</h3>
+  <button>SHOP NOW</button>
+  <h3>A special section for women containing clothes<br> from the latest fashion trends</h3>
+</div>
+</div>
+<div class="section2" id="categores">
+  <div class="header1">
+   
+    
+
+  <div id="page-content">
+  <div class="section2 slider-wrapper scroll-container">
+      <button class="arrow-btn arrow-left" onclick="scrollLeft()">‹</button>
+        <div class="categores"   id="slider" >
+          <div class="item">
+            <div class="image-container">
+              <img id="m1" class="hover-image" src="1.jpg" alt="" onmouseover="resetImage(this)" onmouseout="changeImage(this)">
+            </div>
+            
+<div class="rating-stars">
+  <span class="star" data-value="1">&#9733;</span>
+  <span class="star" data-value="2">&#9733;</span>
+  <span class="star" data-value="3">&#9733;</span>
+  <span class="star" data-value="4">&#9733;</span>
+  <span class="star" data-value="5">&#9733;</span>
+</div>
+
+           <H5>Classic clothing for women</H5>
+            <div class="price-container">
+    <span class="old-price">$50.00</span>
+    <span class="new-price">$75.00</span>
+  </div>
+            <div class="icons">
+              <i class="fas fa-shopping-cart"></i>
+              <i class="fas fa-heart"></i>
+              <i class="fas fa-eye" ></i>
+            </div>
+          </div>
+          
+        
+          <div class="item">
+            <div class="image-container">
+              <img id="m2" class="hover-image" src="2.jpg" alt="" onmouseover="resetImage(this)" onmouseout="changeImage(this)">
+            </div>
+              <div class="rating-stars">
+  <span class="star" data-value="1">&#9733;</span>
+  <span class="star" data-value="2">&#9733;</span>
+  <span class="star" data-value="3">&#9733;</span>
+  <span class="star" data-value="4">&#9733;</span>
+  <span class="star" data-value="5">&#9733;</span>
+</div>
+               <H5>Classic clothing for women</H5>
+            <div class="price-container">
+    <span class="old-price">$50.00</span>
+    <span class="new-price">$75.00</span>
+  </div>
+            <div class="icons">
+              <i class="fas fa-shopping-cart"></i>
+              <i class="fas fa-heart"></i>
+              <i class="fas fa-eye"></i>
+            </div>
+            </div>
+      
+            
+            <div class="item">
+              <div class="image-container">
+                <img class="hover-image" id="m3" src="3.jpg" alt="" onmouseover="resetImage(this)" onmouseout="changeImage(this)">
+              </div>
+               <div class="rating-stars">
+  <span class="star" data-value="1">&#9733;</span>
+  <span class="star" data-value="2">&#9733;</span>
+  <span class="star" data-value="3">&#9733;</span>
+  <span class="star" data-value="4">&#9733;</span>
+  <span class="star" data-value="5">&#9733;</span>
+</div>
+                 <H5>Classic clothing for women</H5>
+            <div class="price-container">
+    <span class="old-price">$50.00</span>
+    <span class="new-price">$75.00</span>
+  </div>
+                <div class="icons">
+                  <i class="fas fa-shopping-cart"></i>
+                  <i class="fas fa-heart"></i>
+                  <i class="fas fa-eye"></i>
+                </div>
+              </div>
+              
+              <div class="item">
+                <div class="image-container">
+                  <img class="hover-image" id="m4" src="4.jpg" alt="" onmouseover="resetImage(this)" onmouseout="changeImage(this)">
+                </div>
+                 <div class="rating-stars">
+  <span class="star" data-value="1">&#9733;</span>
+  <span class="star" data-value="2">&#9733;</span>
+  <span class="star" data-value="3">&#9733;</span>
+  <span class="star" data-value="4">&#9733;</span>
+  <span class="star" data-value="5">&#9733;</span>
+</div>
+                   <H5>Classic clothing for women</H5>
+            <div class="price-container">
+    <span class="old-price">$50.00</span>
+    <span class="new-price">$75.00</span>
+  </div>
+                  <div class="icons">
+                    <i class="fas fa-shopping-cart"></i>
+                    <i class="fas fa-heart"></i>
+                    <i class="fas fa-eye"></i>
+                  </div>
+                </div>
+              
+                  <div class="item">
+                    <div class="image-container">
+                      <img class="hover-image" id="m5" src="5.jpg" alt="" onmouseover="resetImage(this)" onmouseout="changeImage(this)">
+                    </div>
+                    <div class="rating-stars">
+  <span class="star" data-value="1">&#9733;</span>
+  <span class="star" data-value="2">&#9733;</span>
+  <span class="star" data-value="3">&#9733;</span>
+  <span class="star" data-value="4">&#9733;</span>
+  <span class="star" data-value="5">&#9733;</span>
+</div>
+                      <H5>Classic clothing for women</H5>
+            <div class="price-container">
+    <span class="old-price">$50.00</span>
+    <span class="new-price">$75.00</span>
+  </div>
+                    <div class="icons">
+                      <i class="fas fa-shopping-cart"></i>
+                      <i class="fas fa-heart"></i>
+                      <i class="fas fa-eye"></i>
+                    </div>
+                  </div> 
+        </div>
+        <button class="arrow-btn arrow-right" onclick="scrollRight()">›</button>
+      </div>
+
+
+       <div class="section2 slider-wrapper scroll-container">
+      <button class="arrow-btn arrow-left" onclick="scrollLeft()">‹</button>
+        <div class="categores"   id="slider" >
+          <div class="item">
+            <div class="image-container">
+              <img id="m6" class="hover-image" src="6.jpg" alt="" onmouseover="resetImage(this)" onmouseout="changeImage(this)">
+            </div>
+           
+<div class="rating-stars">
+  <span class="star" data-value="1">&#9733;</span>
+  <span class="star" data-value="2">&#9733;</span>
+  <span class="star" data-value="3">&#9733;</span>
+  <span class="star" data-value="4">&#9733;</span>
+  <span class="star" data-value="5">&#9733;</span>
+</div>
+
+              <H5>Classic clothing for women</H5>
+            <div class="price-container">
+    <span class="old-price">$50.00</span>
+    <span class="new-price">$75.00</span>
+  </div>
+            <div class="icons">
+              <i class="fas fa-shopping-cart"></i>
+              <i class="fas fa-heart"></i>
+              <i class="fas fa-eye" onclick="openPopup(this)" title="عرض التفاصيل"></i>
+            </div>
+          </div>
+          
+        
+          <div class="item">
+            <div class="image-container">
+              <img id="m7" class="hover-image" src="7.jpg" alt="" onmouseover="resetImage(this)" onmouseout="changeImage(this)">
+            </div>
+              <div class="rating-stars">
+  <span class="star" data-value="1">&#9733;</span>
+  <span class="star" data-value="2">&#9733;</span>
+  <span class="star" data-value="3">&#9733;</span>
+  <span class="star" data-value="4">&#9733;</span>
+  <span class="star" data-value="5">&#9733;</span>
+</div>
+              <H5>Classic clothing for women</H5>
+            <div class="price-container">
+    <span class="old-price">$50.00</span>
+    <span class="new-price">$75.00</span>
+  </div>
+            <div class="icons">
+              <i class="fas fa-shopping-cart"></i>
+              <i class="fas fa-heart"></i>
+              <i class="fas fa-eye"></i>
+            </div>
+            </div>
+      
+            
+            <div class="item">
+              <div class="image-container">
+                <img class="hover-image" id="m8" src="8.jpg" alt="" onmouseover="resetImage(this)" onmouseout="changeImage(this)">
+              </div>
+               <div class="rating-stars">
+  <span class="star" data-value="1">&#9733;</span>
+  <span class="star" data-value="2">&#9733;</span>
+  <span class="star" data-value="3">&#9733;</span>
+  <span class="star" data-value="4">&#9733;</span>
+  <span class="star" data-value="5">&#9733;</span>
+</div>
+                 <H5>Classic clothing for women</H5>
+            <div class="price-container">
+    <span class="old-price">$50.00</span>
+    <span class="new-price">$75.00</span>
+  </div>
+                <div class="icons">
+                  <i class="fas fa-shopping-cart"></i>
+                  <i class="fas fa-heart"></i>
+                  <i class="fas fa-eye"></i>
+                </div>
+              </div>
+              
+              <div class="item">
+                <div class="image-container">
+                  <img class="hover-image" id="m9" src="9.jpg" alt="" onmouseover="resetImage(this)" onmouseout="changeImage(this)">
+                </div>
+                 <div class="rating-stars">
+  <span class="star" data-value="1">&#9733;</span>
+  <span class="star" data-value="2">&#9733;</span>
+  <span class="star" data-value="3">&#9733;</span>
+  <span class="star" data-value="4">&#9733;</span>
+  <span class="star" data-value="5">&#9733;</span>
+</div>
+                   <H5>Classic clothing for women</H5>
+            <div class="price-container">
+    <span class="old-price">$50.00</span>
+    <span class="new-price">$75.00</span>
+  </div>
+                  <div class="icons">
+                    <i class="fas fa-shopping-cart"></i>
+                    <i class="fas fa-heart"></i>
+                    <i class="fas fa-eye"></i>
+                  </div>
+                </div>
+              
+                  <div class="item">
+                    <div class="image-container">
+                      <img class="hover-image" id="m10" src="10.jpg" alt="" onmouseover="resetImage(this)" onmouseout="changeImage(this)">
+                    </div>
+                    <div class="rating-stars">
+  <span class="star" data-value="1">&#9733;</span>
+  <span class="star" data-value="2">&#9733;</span>
+  <span class="star" data-value="3">&#9733;</span>
+  <span class="star" data-value="4">&#9733;</span>
+  <span class="star" data-value="5">&#9733;</span>
+</div>
+                     <H5>Classic clothing for women</H5>
+            <div class="price-container">
+    <span class="old-price">$50.00</span>
+    <span class="new-price">$75.00</span>
+  </div>
+                    <div class="icons">
+                      <i class="fas fa-shopping-cart"></i>
+                      <i class="fas fa-heart"></i>
+                      <i class="fas fa-eye"></i>
+                    </div>
+                  </div> 
+        </div>
+        <button class="arrow-btn arrow-right" onclick="scrollRight()">›</button>
+      </div>
+
+
+      <div class="section2 slider-wrapper scroll-container">
+      <button class="arrow-btn arrow-left" onclick="scrollLeft()">‹</button>
+        <div class="categores"   id="slider" >
+<div class="item">
+  <div class="image-container">
+    <img id="m11" class="hover-image" src="11.jpg" alt="" 
+         onmouseover="resetImage(this)" onmouseout="changeImage(this)" 
+         style="object-fit: contain; max-height: 90%;">
+  </div>
+  
+  <div class="rating-stars">
+    <span class="star" data-value="1">&#9733;</span>
+    <span class="star" data-value="2">&#9733;</span>
+    <span class="star" data-value="3">&#9733;</span>
+    <span class="star" data-value="4">&#9733;</span>
+    <span class="star" data-value="5">&#9733;</span>
+  </div>
+
+  <H5>Classic clothing for women</H5>
+  <div class="price-container">
+    <span class="old-price">$50.00</span>
+    <span class="new-price">$75.00</span>
+  </div>
+  <div class="icons">
+    <i class="fas fa-shopping-cart"></i>
+    <i class="fas fa-heart"></i>
+    <i class="fas fa-eye" onclick="openPopup(this)" title="عرض التفاصيل"></i>
+  </div>
+</div>
+          
+        
+          <div class="item">
+            <div class="image-container">
+              <img id="m12" class="hover-image" src="12.jpg" alt="" onmouseover="resetImage(this)" onmouseout="changeImage(this)">
+            </div>
+              <div class="rating-stars">
+  <span class="star" data-value="1">&#9733;</span>
+  <span class="star" data-value="2">&#9733;</span>
+  <span class="star" data-value="3">&#9733;</span>
+  <span class="star" data-value="4">&#9733;</span>
+  <span class="star" data-value="5">&#9733;</span>
+</div>
+               <H5>Classic clothing for women</H5>
+            <div class="price-container">
+    <span class="old-price">$50.00</span>
+    <span class="new-price">$75.00</span>
+  </div>
+            <div class="icons">
+              <i class="fas fa-shopping-cart"></i>
+              <i class="fas fa-heart"></i>
+              <i class="fas fa-eye"></i>
+            </div>
+            </div>
+      
+            
+            <div class="item">
+              <div class="image-container">
+                <img class="hover-image" id="m13" src="12.jpg" alt="" onmouseover="resetImage(this)" onmouseout="changeImage(this)">
+              </div>
+               <div class="rating-stars">
+  <span class="star" data-value="1">&#9733;</span>
+  <span class="star" data-value="2">&#9733;</span>
+  <span class="star" data-value="3">&#9733;</span>
+  <span class="star" data-value="4">&#9733;</span>
+  <span class="star" data-value="5">&#9733;</span>
+</div>
+                 <H5>Classic clothing for women</H5>
+            <div class="price-container">
+    <span class="old-price">$50.00</span>
+    <span class="new-price">$75.00</span>
+  </div>
+                <div class="icons">
+                  <i class="fas fa-shopping-cart"></i>
+                  <i class="fas fa-heart"></i>
+                  <i class="fas fa-eye"></i>
+                </div>
+              </div>
+              
+              <div class="item">
+                <div class="image-container">
+                  <img class="hover-image" id="m14" src="12.jpg" alt="" onmouseover="resetImage(this)" onmouseout="changeImage(this)">
+                </div>
+                 <div class="rating-stars">
+  <span class="star" data-value="1">&#9733;</span>
+  <span class="star" data-value="2">&#9733;</span>
+  <span class="star" data-value="3">&#9733;</span>
+  <span class="star" data-value="4">&#9733;</span>
+  <span class="star" data-value="5">&#9733;</span>
+</div>
+                   <H5>Classic clothing for women</H5>
+            <div class="price-container">
+    <span class="old-price">$50.00</span>
+    <span class="new-price">$75.00</span>
+  </div>
+                  <div class="icons">
+                    <i class="fas fa-shopping-cart"></i>
+                    <i class="fas fa-heart"></i>
+                    <i class="fas fa-eye"></i>
+                  </div>
+                </div>
+              
+                  <div class="item">
+                    <div class="image-container">
+                      <img class="hover-image" id="m15" src="12.jpg" alt="" onmouseover="resetImage(this)" onmouseout="changeImage(this)">
+                    </div>
+                    <div class="rating-stars">
+  <span class="star" data-value="1">&#9733;</span>
+  <span class="star" data-value="2">&#9733;</span>
+  <span class="star" data-value="3">&#9733;</span>
+  <span class="star" data-value="4">&#9733;</span>
+  <span class="star" data-value="5">&#9733;</span>
+</div>
+                      <H5>Classic clothing for women</H5>
+            <div class="price-container">
+    <span class="old-price">$50.00</span>
+    <span class="new-price">$75.00</span>
+  </div>
+                    <div class="icons">
+                      <i class="fas fa-shopping-cart"></i>
+                      <i class="fas fa-heart"></i>
+                      <i class="fas fa-eye"></i>
+                    </div>
+                  </div> 
+        </div>
+        <button class="arrow-btn arrow-right" onclick="scrollRight()">›</button>
+      </div>
+
+
+
+
+<div class="section2 slider-wrapper scroll-container">
+  <button class="arrow-btn arrow-left" onclick="scrollLeft()">‹</button>
+  <div class="categores" id="slider">
+    <div class="item">
+      <div class="image-container">
+        <img id="m16" class="hover-image" src="12.jpg" alt="" onmouseover="resetImage(this)" onmouseout="changeImage(this)">
+      </div>
+      
+      <div class="rating-stars">
+        <span class="star" data-value="1">&#9733;</span>
+        <span class="star" data-value="2">&#9733;</span>
+        <span class="star" data-value="3">&#9733;</span>
+        <span class="star" data-value="4">&#9733;</span>
+        <span class="star" data-value="5">&#9733;</span>
+      </div>
+
+      <H5>Classic clothing for women</H5>
+      <div class="price-container">
+        <span class="old-price">$50.00</span>
+        <span class="new-price">$75.00</span>
+      </div>
+
+      <div class="icons">
+        <i class="fas fa-shopping-cart"></i>
+        <i class="fas fa-heart"></i>
+        <i class="fas fa-eye" onclick="openPopup(this)" title="عرض التفاصيل"></i>
+      </div>
+    </div>
+    
+    <div class="item">
+      <div class="image-container">
+        <img id="m17" class="hover-image" src="12.jpg" alt="" onmouseover="resetImage(this)" onmouseout="changeImage(this)">
+      </div>
+      
+      <div class="rating-stars">
+        <span class="star" data-value="1">&#9733;</span>
+        <span class="star" data-value="2">&#9733;</span>
+        <span class="star" data-value="3">&#9733;</span>
+        <span class="star" data-value="4">&#9733;</span>
+        <span class="star" data-value="5">&#9733;</span>
+      </div>
+      
+      <H5>Classic clothing for women</H5>
+      <div class="price-container">
+        <span class="old-price">$50.00</span>
+        <span class="new-price">$75.00</span>
+      </div>
+      
+      <div class="icons">
+        <i class="fas fa-shopping-cart"></i>
+        <i class="fas fa-heart"></i>
+        <i class="fas fa-eye"></i>
+      </div>
+    </div>
+    
+    <div class="item">
+      <div class="image-container">
+        <img class="hover-image" id="m18" src="12.jpg" alt="" onmouseover="resetImage(this)" onmouseout="changeImage(this)">
+      </div>
+      
+      <div class="rating-stars">
+        <span class="star" data-value="1">&#9733;</span>
+        <span class="star" data-value="2">&#9733;</span>
+        <span class="star" data-value="3">&#9733;</span>
+        <span class="star" data-value="4">&#9733;</span>
+        <span class="star" data-value="5">&#9733;</span>
+      </div>
+      
+      <H5>Classic clothing for women</H5>
+      <div class="price-container">
+        <span class="old-price">$50.00</span>
+        <span class="new-price">$75.00</span>
+      </div>
+      
+      <div class="icons">
+        <i class="fas fa-shopping-cart"></i>
+        <i class="fas fa-heart"></i>
+        <i class="fas fa-eye"></i>
+      </div>
+    </div>
+    
+    <div class="item">
+      <div class="image-container">
+        <img class="hover-image" id="m19" src="12.jpg" alt="" onmouseover="resetImage(this)" onmouseout="changeImage(this)">
+      </div>
+      
+      <div class="rating-stars">
+        <span class="star" data-value="1">&#9733;</span>
+        <span class="star" data-value="2">&#9733;</span>
+        <span class="star" data-value="3">&#9733;</span>
+        <span class="star" data-value="4">&#9733;</span>
+        <span class="star" data-value="5">&#9733;</span>
+      </div>
+      
+      <H5>Classic clothing for women</H5>
+      <div class="price-container">
+        <span class="old-price">$50.00</span>
+        <span class="new-price">$75.00</span>
+      </div>
+      
+      <div class="icons">
+        <i class="fas fa-shopping-cart"></i>
+        <i class="fas fa-heart"></i>
+        <i class="fas fa-eye"></i>
+      </div>
+    </div>
+    
+    <div class="item">
+      <div class="image-container">
+        <img class="hover-image" id="m20" src="12.jpg" alt="" onmouseover="resetImage(this)" onmouseout="changeImage(this)">
+      </div>
+      
+      <div class="rating-stars">
+        <span class="star" data-value="1">&#9733;</span>
+        <span class="star" data-value="2">&#9733;</span>
+        <span class="star" data-value="3">&#9733;</span>
+        <span class="star" data-value="4">&#9733;</span>
+        <span class="star" data-value="5">&#9733;</span>
+      </div>
+      
+      <H5>Classic clothing for women</H5>
+      <div class="price-container">
+        <span class="old-price">$50.00</span>
+        <span class="new-price">$75.00</span>
+      </div>
+      
+      <div class="icons">
+        <i class="fas fa-shopping-cart"></i>
+        <i class="fas fa-heart"></i>
+        <i class="fas fa-eye"></i>
+      </div>
+    </div>
+  </div>
+  <button class="arrow-btn arrow-right" onclick="scrollRight()">›</button>
+  
+  <div class="content">
+ <a href="#top"><button >top</button></a>
+</div>
+</div>
+<a href="#" onclick="goBack()" class="back-button">← Back</a>
+
+
+       </body>
+       </html>
+
+       

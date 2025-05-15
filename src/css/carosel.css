@@ -1,0 +1,141 @@
+.product-carousel {
+  margin: 0 auto;
+  padding: 0 50px;
+  position: relative;
+}
+
+.product-slide {
+  padding: 8px;
+  text-align: center;
+  background: #f5f6f5;
+  /* ✅ Added light gray background */
+  border-radius: 12px;
+  box-shadow: none;
+  /* Removed shadow */
+  margin: 0 5px;
+  /* Increased gap between products */
+  transition: transform 0.3s ease;
+  max-width: 200px;
+  /* Decreased width of each card */
+  height: 200px;
+}
+
+.product-slide:hover {
+  transform: translateY(-5px);
+}
+
+.product-slide img {
+  max-width: 100%;
+  height: 130px;
+  /* Smaller image */
+  object-fit: contain;
+  margin: 0 auto;
+}
+
+.product-slide h5 {
+  font-size: 14px;
+  /* Smaller text */
+  font-weight: 500;
+  margin: 4px 0;
+  color: #333;
+}
+
+.product-slide p {
+  font-size: 11px;
+  /* Smaller text */
+  color: #6b7280;
+}
+
+/* Arrows */
+.slick-prev,
+.slick-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #ffffff;
+  /* White background */
+  border-radius: 50%;
+  /* Full circle */
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 1001;
+  width: 50px;
+  /* Smaller arrow size */
+  height: 50px;
+  line-height: 40px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.slick-prev::before,
+.slick-next::before {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  color: #000000;
+  /* Black arrow color */
+}
+
+.slick-prev::before {
+  content: "\f053";
+}
+
+.slick-next::before {
+  content: "\f054";
+}
+
+.slick-prev {
+  left: -20px;
+}
+
+.slick-next {
+  right: -20px;
+}
+
+/* Optional: Hide dots */
+.slick-dots {
+  display: none !important;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .product-carousel {
+    padding: 0 30px;
+  }
+
+  .product-slide {
+    width: 400px;
+    margin: 0 3px;
+
+    /* Reduced gap on mobile */
+  }
+
+  .product-slide img {
+    height: 100px;
+    /* Reduced from 150px */
+  }
+
+  .slick-prev {
+    left: 0;
+  }
+
+  .slick-next {
+    right: 0;
+  }
+}
+@media (max-width: 568px) {
+    .product-slide {
+      max-width: 400px;
+    width: 100%;
+    margin: 0 3px;
+
+    /* Reduced gap on mobile */
+  }
+
+  .product-slide img {
+    height: 120px;
+    width: 450px;
+    /* Reduced from 150px */
+  }
+
+}
