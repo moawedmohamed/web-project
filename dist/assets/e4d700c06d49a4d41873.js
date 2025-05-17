@@ -1,0 +1,1 @@
+$(document).ready((function(){const e=document.querySelectorAll(".fade-in"),t=new IntersectionObserver((e=>{e.forEach((e=>{e.isIntersecting&&(e.target.style.opacity=1,e.target.style.transform="translateY(0)")}))}),{threshold:.1});e.forEach((e=>{t.observe(e)}))}));
