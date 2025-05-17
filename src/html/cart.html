@@ -35,7 +35,7 @@
     <!-- Custom styles -->
     <link rel="stylesheet" href="../css/cart.css" />
     <link rel="stylesheet" href="../css/coupon.css" />
-     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style.css" />
     <style></style>
   </head>
   <body>
@@ -65,26 +65,42 @@
               <i class="bi bi-search"></i>
             </button>
           </div>
-          <div class="flex items-center">
+          <div class="flex items-center space-x-8">
             <button
               id="mobile-search-btn"
               class="lg:hidden mr-2 text-gray-600 hover:text-gray-800"
             >
               <i class="bi bi-search text-xl"></i>
             </button>
-            <a href="#" class="text-gray-600 hover:text-gray-800 mx-2"
-              ><i class="bi bi-heart text-xl"></i
-            ></a>
+            <a href="#" class="text-gray-600 hover:text-gray-800 mx-2 relative">
+              <i class="bi bi-heart text-xl"></i>
+              <!-- Wishlist badge -->
+              <span
+                id="wishlist-count"
+                class="absolute -top-2 -right-2 bg-blue-500 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center"
+              >
+                0
+              </span>
+            </a>
             <a
               href="../html/cart.html"
-              class="text-gray-600 hover:text-gray-800 mx-2"
-              ><i class="bi bi-cart text-xl"></i
-            ></a>
+              class="text-gray-600 hover:text-gray-800 mx-2 relative"
+            >
+              <i class="bi bi-cart text-xl"></i>
+              <!-- Cart badge -->
+              <span
+                id="cart-count"
+                class="absolute -top-2 -right-2 bg-blue-500 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center"
+              >
+                0
+              </span>
+            </a>
             <a
               href="../html/login2.html"
               class="hidden lg:block text-gray-600 hover:text-gray-800 mx-2"
-              ><i class="bi bi-person-circle text-xl"></i
-            ></a>
+            >
+              <i class="bi bi-person-circle text-xl"></i>
+            </a>
           </div>
         </div>
         <div id="mobile-search" class="w-full hidden my-2">
@@ -165,6 +181,7 @@
                 x-show="open"
                 @click.outside="open = false"
                 x-transition
+                  x-cloak
                 class="absolute z-50 mt-2 w-48 bg-white shadow-lg rounded-md py-2"
               >
                 <li>
@@ -201,6 +218,7 @@
                 x-show="open"
                 @click.outside="open = false"
                 x-transition
+                  x-cloak
                 class="absolute z-50 mt-2 w-48 bg-white shadow-lg rounded-md py-2"
               >
                 <li>
@@ -325,7 +343,7 @@
       </div>
     </div>
 
-      <div class="join-section">
+    <div class="join-section">
       <h1>Join Our Newsletter</h1>
       <p>
         Subscribe to get special offers, free giveaways, and once-in-a-lifetime
@@ -582,6 +600,16 @@
     ></script>
     <!-- Load carousel.js last -->
     <script src="../js/carousel.js"></script>
+    <script>
+      const scrollBtn = document.getElementById("scrollToTopBtn");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 100) {
+          scrollBtn.classList.remove("opacity-0", "pointer-events-none");
+        } else {
+          scrollBtn.classList.add("opacity-0", "pointer-events-none");
+        }
+      });
+    </script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         const mobileMenuBtn = document.getElementById("mobile-menu-btn");

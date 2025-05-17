@@ -1,15 +1,19 @@
-*{
+/* Reset and global styles */
+* {
     margin: 0;
     padding: 0;
-    font-family:sans-serif;
-    font-family: 'comfortaa' , sans-serif;
+    font-family: 'Comfortaa', sans-serif, sans-serif;
     -webkit-user-select: none;
     user-select: none;
     scroll-behavior: smooth;
-    body{
-      background-color:#FAFAFA;
-    }
-    .homepage{
+}
+
+body {
+    background-color: #FAFAFA;
+}
+
+/* Homepage section */
+.homepage {
     background: url(PH16.jpg);
     background-size: 700px;
     background-repeat: no-repeat;
@@ -18,33 +22,37 @@
     height: 1150px;
     display: flex;
     align-items: center;
-
 }
-.content{
+
+/* Content inside homepage */
+.content {
     margin-left: 100px;
 }
-.content h2{
+
+.content h2 {
     font-size: 40px;
 }
-.content h1{
-   color:#999;     
+
+.content h1 {
+    color: #999;
     font-size: 100px;
     margin: 60px 0;
     text-shadow: 0 0 100px gray;
+}
 
+.con h2 {
+    font-size: 90px;
+    color: #999;
+    text-shadow: 0 0 100px gray;
 }
-.con h2{
-  font-size: 90px;
-   color:#999;  
-   text-shadow: 0 0 100px gray;
-}
-.content button{
+
+.content button {
     margin-top: 70px;
     margin-bottom: 50px;
     height: 70px;
     width: 190px;
     border: none;
-    background-color:gray;
+    background-color: gray;
     color: aliceblue;
     border-radius: 40px;
     font-size: 20px;
@@ -52,11 +60,13 @@
     cursor: pointer;
     transition: all 0.3s ease;
 }
-.content button:hover{
-   box-shadow: 0 10px 50px 5px gray ;
+
+.content button:hover {
+    box-shadow: 0 10px 50px 5px gray;
 }
-}
-.categores{
+
+/* Categories container */
+.categores {
     display: flex;
     width: 80%;
     margin-left: 10%;
@@ -64,76 +74,70 @@
     margin-top: 50px;
 }
 
-.categores .item{
-
+/* Individual category item */
+.categores .item {
     width: 19%;
-    background-color:#FAFAFA;
+    background-color: #FAFAFA;
     cursor: pointer;
-    
-    
+    transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
 }
-.categores .item:hover{
-    background-color:#ccc;
 
-
-    transform: scale(1.05); /* بيكبر*/
-    transition: transform 0.3s ease; /* حركة ناعمة */
-    filter: brightness(1.01); 
-    border-radius: 16%; 
-    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);  
-    animation: wiggle 0.4s ease;
+.categores .item:hover {
+    background-color: #ccc;
+    transform: scale(1.05); /* Scale up */
+    filter: brightness(1.01);
+    border-radius: 16%;
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
     animation: pulse 0.6s ease-in-out;
-    
-    
 }
-.section2 img{
+
+/* Section 2 images */
+.section2 img {
     width: 170px;
     margin-left: 10%;
     margin-top: 20px;
-    transition: 
-    transform 0.4s ease,
-    filter 0.4s ease,
-    box-shadow 0.4s ease;
-  object-fit: cover;                 
+    object-fit: cover;
+    transition: transform 0.4s ease, filter 0.4s ease, box-shadow 0.4s ease;
 }
-.section2 h3{
+
+/* Section 2 headings */
+.section2 h3 {
     text-align: center;
     margin-top: 15px;
 }
-.section2 h4{
-  color:rgba(158, 114, 114, 0.6);
-    text-align:left;
-   
+
+.section2 h4 {
+    color: rgba(158, 114, 114, 0.6);
+    text-align: left;
 }
 
-
+/* Hover image effect */
 .hover-image {
     transition: transform 0.3s ease, filter 0.3s ease;
-  }
-  
-  .hover-image:hover {
-   
-    filter: brightness(1.01); 
-    border-radius: 20%; 
-    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);  /* ظل ناعم */
-    animation: wiggle 0.4s ease;
+}
+
+.hover-image:hover {
+    filter: brightness(1.01);
+    border-radius: 20%;
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
     animation: pulse 0.6s ease-in-out;
-   
-    /* الانميشن*/
-  }
-  @keyframes wiggle {
+}
+
+/* Animations */
+@keyframes wiggle {
     0%, 100% { transform: rotate(0deg); }
     25% { transform: rotate(1deg); }
     75% { transform: rotate(-1deg); }
-  }
-  @keyframes pulse {
+}
+
+@keyframes pulse {
     0% { transform: scale(1); }
     50% { transform: scale(1.05); }
     100% { transform: scale(1); }
-  }
- 
-  
-  .arrow-btn {
+}
+
+/* Arrow button for navigation */
+.arrow-btn {
     position: absolute;
     top: 35%;
     transform: translateY(-50%);
@@ -145,12 +149,10 @@
     border-radius: 50%;
     cursor: pointer;
     z-index: 2;
-    
-  }
-  
-  /* إخفاء الأيقونات مبدئيًا */
-  .icons {
-    
+}
+
+/* Icons container and hover */
+.icons {
     display: flex;
     gap: 10px;
     opacity: 0;
@@ -158,122 +160,124 @@
     transition: all 0.3s ease;
     padding: 10px 0;
     justify-content: center;
-  }
-  
-  .item:hover .icons {
+}
+
+.item:hover .icons {
     opacity: 1;
     transform: translateY(0);
-  }
-  
-  .icons i {
+}
+
+/* Individual icons */
+.icons i {
     color: white;
-   background-color:rgba(145, 130, 130, 0.6);
+    background-color: rgba(145, 130, 130, 0.6);
     padding: 8px;
     border-radius: 50%;
     cursor: pointer;
     transition: transform 0.2s;
-  }
-  
-  .icons i:hover {
+}
+
+.icons i:hover {
     transform: scale(1.2);
-  }
-  /* النجوم */
+}
+
+/* Rating stars */
 .rating-stars {
-  display: inline-block;
-  direction: ltr;
+    display: inline-block;
+    direction: ltr;
 }
 
 .star {
-  font-size: 1.4rem;
-  color: rgb(235, 220, 141);
-  cursor: pointer;
-  transition: color 0.2s;
+    font-size: 1.4rem;
+    color: rgb(235, 220, 141);
+    cursor: pointer;
+    transition: color 0.2s;
 }
 
 .star.hovered,
 .star.selected {
-  color: gold; 
+    color: gold;
 }
 
-  
-  /*price*/
-  .price-container {
-      font-family: Arial, sans-serif;
-      font-size: 14px;
-      color: #333;
-    }
+/* Price styling */
+.price-container {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #333;
+}
 
-    .old-price {
-      text-decoration: line-through;
-      color: #999;
-      margin-left: 10px;
-    }
+.old-price {
+    text-decoration: line-through;
+    color: #999;
+    margin-left: 10px;
+}
 
-    .new-price {
-      color: #eb892e; /* أحمر لجذب الانتباه */
-      font-weight: bold;
-      font-size: 18px;
-    }
+.new-price {
+    color: #eb892e; /* Eye-catching orange */
+    font-weight: bold;
+    font-size: 18px;
+}
 
- /* الخلفية المظللة */
-    .overlay {
-      position: fixed;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background-color: rgba(0, 0, 0, 0.5);
-      display: none;
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-    }
+/* Modal background overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
 
-    /* محتوى المودال */
-    .modal {
-      background: #ccc;
-      padding: 50px;
-      border-radius: 8px;
-      text-align: right;
-    }
+/* Modal content */
+.modal {
+    background: #ccc;
+    padding: 50px;
+    border-radius: 8px;
+    text-align: right;
+}
 
-    /* زر إغلاق */
-    .close-btn {
-      float: left;
-      cursor: pointer;
-      font-size: 18px;
-      color: red;
-    }
+/* Close button */
+.close-btn {
+    float: left;
+    cursor: pointer;
+    font-size: 18px;
+    color: red;
+}
 
-    /* الزر الأساسي */
-    .eye-button {
-      cursor: pointer;
-      font-size: 20px;
-      background: none;
-      border: none;
-    }
+/* Eye button */
+.eye-button {
+    cursor: pointer;
+    font-size: 20px;
+    background: none;
+    border: none;
+}
 
-    .page-content {
-      padding: 20px;
-    }
-    .back-button {
-  display: inline-block;
-  margin-top: 20px;
-  margin-bottom: 40px;
-  text-decoration: none;
-  color:white;
-  font-weight: bold;
-  font-size: 14px;
-  background: gray;
-  padding: 8px 12px;
-  border-radius: 15px;
-  transition: background 0.3s, transform 0.2s;
+/* Page content padding */
+.page-content {
+    padding: 20px;
+}
+
+/* Back button */
+.back-button {
+    display: inline-block;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    background: gray;
+    padding: 8px 12px;
+    border-radius: 15px;
+    transition: background 0.3s, transform 0.2s;
 }
 
 .back-button:hover {
-  background:#ccc;
-  transform: translateX(-3px);
-  box-shadow: 0 10px 50px 5px gray ;
+    background: #ccc;
+    transform: translateX(-3px);
+    box-shadow: 0 10px 50px 5px gray;
 }
-
-   

@@ -42,6 +42,9 @@
         }
       }
     </style>
+    <head>
+
+    </head>
   </head>
   <body>
     <nav class="bg-white shadow-md border-b border-gray-200 py-2">
@@ -73,22 +76,36 @@
           <div class="flex items-center space-x-8">
             <button
               id="mobile-search-btn"
-              class="lg:hidden text-gray-600 hover:text-gray-800"
+              class="lg:hidden mr-2 text-gray-600 hover:text-gray-800"
             >
               <i class="bi bi-search text-xl"></i>
             </button>
-            <a href="#" class="text-gray-600 hover:text-gray-800">
+            <a href="#" class="text-gray-600 hover:text-gray-800 mx-2 relative">
               <i class="bi bi-heart text-xl"></i>
+              <!-- Wishlist badge -->
+              <span
+                id="wishlist-count"
+                class="absolute -top-2 -right-2 bg-blue-500 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center"
+              >
+                0
+              </span>
             </a>
             <a
               href="../html/cart.html"
-              class="text-gray-600 hover:text-gray-800"
+              class="text-gray-600 hover:text-gray-800 mx-2 relative"
             >
               <i class="bi bi-cart text-xl"></i>
+              <!-- Cart badge -->
+              <span
+                id="cart-count"
+                class="absolute -top-2 -right-2 bg-blue-500 text-white text-sm font-bold rounded-full w-5 h-5 flex items-center justify-center"
+              >
+                0
+              </span>
             </a>
             <a
               href="../html/login2.html"
-              class="hidden lg:block text-gray-600 hover:text-gray-800"
+              class="hidden lg:block text-gray-600 hover:text-gray-800 mx-2"
             >
               <i class="bi bi-person-circle text-xl"></i>
             </a>
@@ -123,7 +140,7 @@
               <a
                 href="#"
                 class="nav-link py-2 px-4 text-gray-600 hover:text-blue-500"
-                  onclick="setActiveLink(this)"
+                onclick="setActiveLink(this)"
                 >Home</a
               >
             </li>
@@ -131,7 +148,7 @@
               <a
                 href="../html/about.html"
                 class="nav-link py-2 px-4 text-gray-600 hover:text-blue-500"
-                  onclick="setActiveLink(this)"
+                onclick="setActiveLink(this)"
                 >About</a
               >
             </li>
@@ -139,7 +156,7 @@
               <a
                 href="../total project/final.html"
                 class="nav-link py-2 px-4 text-gray-600 hover:text-blue-500"
-                  onclick="setActiveLink(this)"
+                onclick="setActiveLink(this)"
                 >Category</a
               >
             </li>
@@ -147,7 +164,7 @@
               <a
                 href="../html/product-details.html"
                 class="nav-link py-2 px-4 text-gray-600 hover:text-blue-500"
-                  onclick="setActiveLink(this)"
+                onclick="setActiveLink(this)"
                 >Product Details</a
               >
             </li>
@@ -155,7 +172,7 @@
               <a
                 href="../html/cart.html"
                 class="nav-link py-2 px-4 text-gray-600 hover:text-blue-500"
-                  onclick="setActiveLink(this)"
+                onclick="setActiveLink(this)"
                 >Cart</a
               >
             </li>
@@ -163,7 +180,7 @@
               <a
                 href="../html/checkout.html"
                 class="nav-link py-2 px-4 text-gray-600 hover:text-blue-500"
-                  onclick="setActiveLink(this)"
+                onclick="setActiveLink(this)"
                 >Checkout</a
               >
             </li>
@@ -171,13 +188,13 @@
               <button
                 @click="open = !open"
                 class="py-2 px-4 text-gray-600 hover:text-blue-500 flex items-center"
-                  onclick="setActiveLink(this)"
               >
                 Dropdown <i class="fas fa-chevron-down ml-1"></i>
               </button>
               <ul
                 x-show="open"
                 @click.outside="open = false"
+                x-cloak
                 x-transition
                 class="absolute z-50 mt-2 w-48 bg-white shadow-lg rounded-md py-2"
               >
@@ -185,7 +202,6 @@
                   <a
                     href="#"
                     class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-blue-500"
-                      onclick="setActiveLink(this)"
                     >Action</a
                   >
                 </li>
@@ -193,7 +209,6 @@
                   <a
                     href="#"
                     class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-blue-500"
-                      onclick="setActiveLink(this)"
                     >Another action</a
                   >
                 </li>
@@ -201,7 +216,6 @@
                   <a
                     href="#"
                     class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-blue-500"
-                      onclick="setActiveLink(this)"
                     >Something else</a
                   >
                 </li>
@@ -211,7 +225,6 @@
               <button
                 @click="open = !open"
                 class="py-2 px-4 text-gray-600 hover:text-blue-500 flex items-center"
-                  onclick="setActiveLink(this)"
               >
                 Dropdown2 <i class="fas fa-chevron-down ml-1"></i>
               </button>
@@ -219,13 +232,13 @@
                 x-show="open"
                 @click.outside="open = false"
                 x-transition
+                x-cloak
                 class="absolute z-50 mt-2 w-48 bg-white shadow-lg rounded-md py-2"
               >
                 <li>
                   <a
                     href="#"
                     class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-blue-500"
-                      onclick="setActiveLink(this)"
                     >Action</a
                   >
                 </li>
@@ -233,7 +246,6 @@
                   <a
                     href="#"
                     class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-blue-500"
-                      onclick="setActiveLink(this)"
                     >Another action</a
                   >
                 </li>
@@ -241,7 +253,6 @@
                   <a
                     href="#"
                     class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-blue-500"
-                      onclick="setActiveLink(this)"
                     >Something else</a
                   >
                 </li>
@@ -251,7 +262,7 @@
               <a
                 href="../html/contact.html"
                 class="nav-link py-2 px-4 text-gray-600 hover:text-blue-500"
-                  onclick="setActiveLink(this)"
+                onclick="setActiveLink(this)"
                 >Contact</a
               >
             </li>
@@ -697,6 +708,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
     <!-- Temporarily disable other scripts to isolate carousel -->
     <script src="../js/details.js"></script>
+    <script src="../js/cart.js"></script>
     <script src="../js/main.js"></script>
     <script src="../js/filter.js"></script>
     <script src="../js/script.js"></script>
@@ -733,14 +745,15 @@
       });
     </script>
     <script>
-      function updateCartCount() {
-        const cart = JSON.parse(localStorage.getItem("cart")) || [];
-        document.getElementById("cart-count").textContent = cart.length;
-      }
+      //   function updateCartCount() {
+      //     const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      //     document.getElementById("cart-count").textContent = cart.length;
+      //   }
 
-      updateCartCount();
+      //   updateCartCount();
+      //
     </script>
-    <script>
+    <!-- <script>
       function setActiveLink(clickedLink) {
         // احصل على كل روابط الـ navbar
         const links = document.querySelectorAll(".nav-link");
@@ -755,6 +768,6 @@
         clickedLink.classList.remove("text-gray-600");
         clickedLink.classList.add("text-blue-500", "font-semibold");
       }
-    </script>
+    </script> -->
   </body>
 </html>

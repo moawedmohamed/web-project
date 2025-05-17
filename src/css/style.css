@@ -5,11 +5,17 @@ body {
     background-color: #f4f4f4;
 }
 
-  .nav-link.active {
-    color: #3b82f6 !important; /* اللون الأزرق الفاتح */
-    background-color: #e0f2fe; /* خلفية فاتحة */
+.nav-link.active {
+    color: #3b82f6 !important;
+    /* اللون الأزرق الفاتح */
+    background-color: #e0f2fe;
+    /* خلفية فاتحة */
     border-radius: 0.25rem;
-  }
+}
+
+[x-cloak] {
+    display: none !important;
+}
 
 /* this  is the style of first section  */
 .top {
@@ -85,9 +91,11 @@ body {
     font-weight: bold;
     margin: 8px 0;
 }
-.rating{
+
+.rating {
     display: flex;
 }
+
 /* Add to Cart Button */
 .product-card .add-to-cart {
     background: #2563eb;

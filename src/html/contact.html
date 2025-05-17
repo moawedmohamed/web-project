@@ -12,7 +12,11 @@
       rel="stylesheet"
     />
 
-
+    <!-- Font Awesome for icons (optional) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
 
   <!-- Leaflet CSS -->
   <link
@@ -139,27 +143,43 @@
               <i class="bi bi-search"></i>
             </button>
           </div>
-          <div class="flex items-center">
-            <button
-              id="mobile-search-btn"
-              class="lg:hidden mr-2 text-gray-600 hover:text-gray-800"
-            >
-              <i class="bi bi-search text-xl"></i>
-            </button>
-            <a href="#" class="text-gray-600 hover:text-gray-800 mx-2"
-              ><i class="bi bi-heart text-xl"></i
-            ></a>
-            <a
-              href="../html/cart.html"
-              class="text-gray-600 hover:text-gray-800 mx-2"
-              ><i class="bi bi-cart text-xl"></i
-            ></a>
-            <a
-              href="../html/login2.html"
-              class="hidden lg:block text-gray-600 hover:text-gray-800 mx-2"
-              ><i class="bi bi-person-circle text-xl"></i
-            ></a>
-          </div>
+   <div class="flex items-center space-x-8">
+  <button
+    id="mobile-search-btn"
+    class="lg:hidden mr-2 text-gray-600 hover:text-gray-800"
+  >
+    <i class="bi bi-search text-xl"></i>
+  </button>
+  <a href="#" class="text-gray-600 hover:text-gray-800 mx-2 relative">
+    <i class="bi bi-heart text-xl"></i>
+    <!-- Wishlist badge -->
+    <span
+      id="wishlist-count"
+      class="absolute -top-2 -right-2 bg-blue-500 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center leading-none"
+    >
+      0
+    </span>
+  </a>
+  <a
+    href="../html/cart.html"
+    class="text-gray-600 hover:text-gray-800 mx-2 relative"
+  >
+    <i class="bi bi-cart text-xl"></i>
+    <!-- Cart badge -->
+ <span
+  id="cart-count"
+  class="absolute -top-2 -right-2 bg-blue-500 text-white text-sm font-bold rounded-full w-5 h-5 flex items-center justify-center leading-tight"
+>
+  0
+</span>
+  </a>
+  <a
+    href="../html/login2.html"
+    class="hidden lg:block text-gray-600 hover:text-gray-800 mx-2"
+  >
+    <i class="bi bi-person-circle text-xl"></i>
+  </a>
+</div>
         </div>
         <div id="mobile-search" class="w-full hidden my-2">
           <div class="flex">
@@ -237,6 +257,7 @@
               </button>
               <ul
                 x-show="open"
+                  x-cloak
                 @click.outside="open = false"
                 x-transition
                 class="absolute z-50 mt-2 w-48 bg-white shadow-lg rounded-md py-2"
@@ -275,6 +296,7 @@
                 x-show="open"
                 @click.outside="open = false"
                 x-transition
+                  x-cloak
                 class="absolute z-50 mt-2 w-48 bg-white shadow-lg rounded-md py-2"
               >
                 <li>
@@ -745,7 +767,16 @@ src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
         map.on('locationerror', onLocationError);
       </script>
 
-
+    <script>
+      const scrollBtn = document.getElementById("scrollToTopBtn");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 100) {
+          scrollBtn.classList.remove("opacity-0", "pointer-events-none");
+        } else {
+          scrollBtn.classList.add("opacity-0", "pointer-events-none");
+        }
+      });
+    </script>
      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
     <!-- Temporarily disable other scripts to isolate carousel -->

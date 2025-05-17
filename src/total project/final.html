@@ -23,236 +23,20 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="../css/st.css" />
     <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="./csspro.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
 
-    <style>
-    
-
-      h1 {
-        text-align: center;
-        color: #0077b6;
-        margin-bottom: 20px;
-        text-shadow: 0 0 100px gray;
-      }
-
-      .page-layout {
-        display: flex;
-        gap: 20px;
-        max-width: 1200px;
-        margin: auto;
-      }
-
-      /* Sidebar */
-      .sidebar {
-        width: 220px;
-        background-color: #ffffff;
-        border-radius: 12px;
-        padding: 20px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        height: fit-content;
-      }
-
-      .category-list {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-      }
-
-      .category-item {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        background-color: #e3f2fd;
-        border-radius: 8px;
-        padding: 8px;
-        transition: background-color 0.3s, transform 0.3s;
-        cursor: pointer;
-      }
-
-      .category-item:hover {
-        background-color: #ccc;
-        transform: translateX(5px);
-      }
-
-      .category-image {
-        width: 40px;
-        height: 40px;
-        border-radius: 8px;
-        object-fit: cover;
-      }
-
-      .category-name {
-        font-size: 15px;
-        color: #0077b6;
-        font-weight: bold;
-        margin-left: 10px;
-      }
-
-      button {
-        margin-top: 2px;
-        margin-bottom: 3px;
-        height: 25px;
-        width: 60px;
-        border: none;
-        background-color: gray;
-        color: white;
-        border-radius: 40px;
-        font-size: 5px;
-        font-weight: 10;
-        cursor: pointer;
-        transition: all 0.3s ease;
-      }
-
-      button:hover {
-        box-shadow: 0 5px 5px 5px #ccc;
-      }
-
-      /* Main area */
-      .main-content {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-      }
-
-      .filters {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 15px;
-        background-color: #ffffff;
-        padding: 15px;
-        border-radius: 10px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-        justify-content: space-between;
-      }
-
-      .filters input[type="search"],
-      .filters select,
-      .filters input[type="range"] {
-        padding: 8px;
-        border: 1px solid #ccc;
-        border-radius: 8px;
-        font-size: 14px;
-      }
-
-      .filters label {
-        font-size: 14px;
-        margin-right: 5px;
-      }
-
-      .products {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 15px;
-      }
-
-      .product-card {
-        background-color: #ffffff;
-        width: 420px;
-        height: 400px;
-        padding: 10px;
-        border-radius: 10px;
-        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        transition: transform 0.3s;
-      }
-
-      .product-card:hover {
-        transform: translateY(-5px);
-      }
-
-      .product-card img {
-        width: 90%;
-        height: 90%;
-      }
-
-      .product-name {
-        margin-top: 10px;
-        font-weight: bold;
-        font-size: 15px;
-        color: #0077b6;
-        text-align: center;
-      }
-
-      .product-price {
-        font-size: 14px;
-        color: #555;
-      }
-
-      ul {
-        list-style: none;
-        padding: 0;
-      }
-
-      .main-item {
-        background: #e3f2fd;
-        padding: 10px 15px;
-        border-radius: 8px;
-        margin-bottom: 10px;
-        cursor: pointer;
-        position: relative;
-        font-weight: bold;
-      }
-
-      .main-item:hover {
-        background: #b3e5fc;
-      }
-
-      .sub-list {
-        margin-top: 8px;
-        margin-right: 10px;
-        display: none;
-        animation: fadeIn 0.3s ease-in-out;
-      }
-
-      .sub-list li {
-        margin: 5px 0;
-      }
-
-      .sub-list a {
-        text-decoration: none;
-        color: white;
-        font-size: 14px;
-      }
-
-      /* Navbar specific fixes */
-      .nav-link {
-        display: block;
-        padding: 0.5rem 1rem;
-        color: #4b5563;
-        text-decoration: none;
-        transition: color 0.3s;
-      }
-
-      .nav-link:hover {
-        color: #3b82f6;
-      }
-
-      #nav-menu {
-        transition: all 0.3s ease;
-      }
-
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
-        }
-      }
-    </style>
+    <style></style>
   </head>
   <body>
-    <nav class="bg-white w-full mt-[-24px] h-fit border-b border-gray-200 mb-20 py-2"">
+    <nav
+      class="bg-white w-full mt-1 lg:mt-[-24px] h-fit border-b border-gray-200 mb-20 py-2"
+    >
       <div class="container mx-auto flex flex-col px-4">
+        <!-- Top Row -->
         <div class="flex justify-between items-center py-2 w-full">
           <div class="flex items-center">
             <button
@@ -263,6 +47,8 @@
             </button>
             <a href="#" class="font-bold text-2xl text-gray-800">eStore</a>
           </div>
+
+          <!-- Desktop Search -->
           <div
             class="hidden mt-3 mb-3 lg:flex items-center mx-3 w-full max-w-96 relative"
           >
@@ -274,25 +60,46 @@
             <button
               class="absolute right-1 top-1/2 transform -translate-y-1/2 bg-blue-800 h-[43px] text-white px-4 py-1.5 rounded-full hover:bg-blue-500"
             >
-              <i class="bi bi-search"></i>
+              <i class="bi bi-search text-base"></i>
             </button>
           </div>
-          <div class="flex items-center space-x-8">
+
+          <!-- Icons -->
+          <div class="flex items-center space-x-4">
+            <!-- Mobile Search Icon -->
             <button
               id="mobile-search-btn"
               class="lg:hidden text-gray-600 hover:text-gray-800"
             >
               <i class="bi bi-search text-xl"></i>
             </button>
-            <a href="#" class="text-gray-600 hover:text-gray-800">
+
+            <!-- Wishlist -->
+            <a href="#" class="text-gray-600 hover:text-gray-800 relative">
               <i class="bi bi-heart text-xl"></i>
+              <span
+                id="wishlist-count"
+                class="absolute -top-2 -right-2 bg-blue-500 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center"
+              >
+                0
+              </span>
             </a>
+
+            <!-- Cart -->
             <a
               href="../html/cart.html"
-              class="text-gray-600 hover:text-gray-800"
+              class="text-gray-600 hover:text-gray-800 relative"
             >
               <i class="bi bi-cart text-xl"></i>
+              <span
+                id="cart-count"
+                class="absolute -top-2 -right-2 bg-blue-500 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center"
+              >
+                0
+              </span>
             </a>
+
+            <!-- Profile (Desktop only) -->
             <a
               href="../html/login2.html"
               class="hidden lg:block text-gray-600 hover:text-gray-800"
@@ -301,37 +108,37 @@
             </a>
           </div>
         </div>
+
+        <!-- Mobile Search Bar -->
         <div id="mobile-search" class="w-full hidden my-2">
-          <div class="flex">
+          <div class="flex items-center gap-1">
             <input
               type="text"
               placeholder="Search for products"
-              class="border border-gray-300 rounded-l-md py-2 px-4 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+              class="border border-gray-300 rounded-l-md py-2 px-3 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
             <button
-              class="bg-gray-200 text-gray-600 py-2 px-4 hover:bg-gray-300"
+              class="bg-gray-200 text-gray-600 py-2 px-3 hover:bg-gray-300"
             >
-              <i class="bi bi-search"></i>
+              <i class="bi bi-search text-sm"></i>
             </button>
             <button
               id="close-mobile-search"
-              class="bg-gray-200 text-gray-600 py-2 px-4 rounded-r-md hover:bg-gray-300"
+              class="bg-gray-200 text-gray-600 py-2 px-3 rounded-r-md hover:bg-gray-300"
             >
-              <i class="bi bi-x-lg"></i>
+              <i class="bi bi-x-lg text-sm"></i>
             </button>
           </div>
         </div>
+
+        <!-- Navigation Menu -->
         <div
           id="nav-menu"
           class="w-full border-t border-gray-200 pt-2 hidden lg:block"
         >
           <ul class="flex flex-col lg:flex-row lg:space-x-4">
-            <li>
-              <a href="../html/index.html" class="nav-link">Home</a>
-            </li>
-            <li>
-              <a href="../html/about.html" class="nav-link">About</a>
-            </li>
+            <li><a href="../html/index.html" class="nav-link">Home</a></li>
+            <li><a href="../html/about.html" class="nav-link">About</a></li>
             <li>
               <a href="../total project/final.html" class="nav-link"
                 >Category</a
@@ -342,30 +149,26 @@
                 >Product Details</a
               >
             </li>
-            <li>
-              <a href="../html/cart.html" class="nav-link">Cart</a>
-            </li>
+            <li><a href="../html/cart.html" class="nav-link">Cart</a></li>
             <li>
               <a href="../html/checkout.html" class="nav-link">Checkout</a>
             </li>
-       
-            <li>
-              <a href="../html/contact.html" class="nav-link">Contact</a>
-            </li>
+            <li><a href="../html/contact.html" class="nav-link">Contact</a></li>
           </ul>
+
+          <!-- Mobile Close Menu Button -->
           <button
             id="close-menu-btn"
             class="lg:hidden mt-2 ml-auto bg-gray-200 text-gray-600 py-2 px-4 rounded-md hover:bg-gray-300"
           >
-            <i class="bi bi-x-lg"></i>
+            <i class="bi bi-x-lg text-sm"></i>
           </button>
         </div>
       </div>
     </nav>
 
     <h1>Sections</h1>
-    <div class="page-layout mb-20" >
-
+    <div class="page-layout mb-20">
       <!-- Sidebar -->
       <aside class="sidebar">
         <ul class="category-list">
@@ -499,18 +302,31 @@
       <!-- Main content -->
       <div class="main-content">
         <!-- Filters -->
-        <div class="filters">
-          <div>
+        <div
+          class="filters flex flex-wrap gap-4 items-center justify-between p-4 bg-gray-100 rounded-lg"
+        >
+          <div class="flex-1 min-w-[150px]">
             <label for="search">Search:</label>
-            <input type="search" id="search" placeholder="Search products..." />
+            <input
+              type="search"
+              id="search"
+              placeholder="Search products..."
+              class="w-full p-2 border rounded"
+            />
           </div>
-          <div>
+          <div class="flex-1 min-w-[150px]">
             <label for="priceRange">Price:</label>
-            <input type="range" id="priceRange" min="0" max="1000" />
+            <input
+              type="range"
+              id="priceRange"
+              min="0"
+              max="1000"
+              class="w-full"
+            />
           </div>
-          <div>
+          <div class="flex-1 min-w-[150px]">
             <label for="sort">Sort by:</label>
-            <select id="sort">
+            <select id="sort" class="w-full p-2 border rounded">
               <option>Default</option>
               <option>Lowest Price</option>
               <option>Highest Price</option>
@@ -522,7 +338,7 @@
         <!-- Products -->
         <div class="products">
           <div class="product-card">
-            <img src="im.jpg" alt="Product" />
+            <img src="./wmen/a2.jpg" alt="Product" />
             <div class="product-name">Women's clothing</div>
             <div class="product-price">$375</div>
           </div>
@@ -531,10 +347,20 @@
             <div class="product-name">electronics</div>
             <div class="product-price">$10000</div>
           </div>
+          <div class="product-card">
+            <img src="./men/10.jpg" alt="Product" />
+            <div class="product-name">Men</div>
+            <div class="product-price">$4000</div>
+          </div>
+          <div class="product-card">
+            <img src="./cheld/16.jpg" alt="Product" />
+            <div class="product-name">Make Up</div>
+            <div class="product-price">$200</div>
+          </div>
         </div>
       </div>
     </div>
-  <div class="join-section ">
+    <div class="join-section">
       <h1>Join Our Newsletter</h1>
       <p>
         Subscribe to get special offers, free giveaways, and once-in-a-lifetime
@@ -549,6 +375,7 @@
         <button class="w-28">Subscribe</button>
       </div>
     </div>
+
     <footer class="bg-gray-100 text-gray-800 py-8">
       <div class="container mx-auto px-4">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-2">

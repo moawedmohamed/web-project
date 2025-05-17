@@ -28,7 +28,7 @@ function displayCartItems() {
       "d-flex align-items-center justify-content-between py-4 mb-3 product-holder";
     // في دالة displayCartItems، نعدل HTML ليكون أكثر تنظيماً
     itemDiv.innerHTML = `
-                <div class="d-flex align-items-center product-info" style="width: 40%">
+              <div class="d-flex align-items-center product-info" style="width: 40%">
                     <img style="width:70px;height:90px" src="${
                       item.image
                     }" alt="${item.title}" class="me-3" />
@@ -139,7 +139,34 @@ function showCouponMessage(message, type) {
     messageElement.className = "coupon-message";
   }, 3000);
 }
+let cartCount = localStorage.getItem("cartCount")
+  ? parseInt(localStorage.getItem("cartCount"))
+  : 0;
+let wishlistCount = localStorage.getItem("wishlistCount")
+  ? parseInt(localStorage.getItem("wishlistCount"))
+  : 0;
+const cartCountElement = document.getElementById("cart-count");
+const wishlistCountElement = document.getElementById("wishlist-count");
 
+// Set initial counts in the badges
+cartCountElement.textContent = cartCount;
+wishlistCountElement.textContent = wishlistCount;
+
+// Function to update cart count
+function updateCartCount(change) {
+  cartCount += change;
+  if (cartCount < 0) cartCount = 0; // Prevent negative count
+  cartCountElement.textContent = cartCount;
+  localStorage.setItem("cartCount", cartCount); // Save to localStorage
+}
+
+// Function to update wishlist count
+function updateWishlistCount(change) {
+  wishlistCount += change;
+  if (wishlistCount < 0) wishlistCount = 0; // Prevent negative count
+  wishlistCountElement.textContent = wishlistCount;
+  localStorage.setItem("wishlistCount", wishlistCount); // Save to localStorage
+}
 const style = document.createElement("style");
 style.textContent = `
 
